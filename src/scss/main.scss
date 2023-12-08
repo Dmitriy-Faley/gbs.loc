@@ -26,7 +26,6 @@ body {
     font-family: 'Inter', sans-serif;
     font-size: $mainFontSize;
     font-weight: 400;
-    background: url('/content/themes/gulp-theme/assets/img/bg.png');
     background-color: #fff;
     background-attachment: fixed;
     background-position: 50% 15%;
@@ -213,7 +212,7 @@ span::selection {
     font-size: 1rem;
     font-weight: 500;
     line-height: 20px;
-    background: $second-color;
+    background: $orange-color;
     border-radius: 50px;
     color: $default-color;
     cursor: pointer;
@@ -223,7 +222,7 @@ span::selection {
     width: 218px;
 
     &:hover {
-        background: $pink-color;
+        background: $orange-color ;
     }
 
     &:active {}
@@ -258,13 +257,13 @@ span::selection {
     z-index: 99;
     top: 0;
     width: 100%;
-    background: $second-color;
+    background: $orange-color;
     transition: all .3s ease-in-out;
     padding: 31px 0;
 }
 
 .active_header {
-    background: $second-color;
+    background: $orange-color;
     transition: all .3s ease-in-out;
 }
 
