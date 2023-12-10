@@ -45,7 +45,8 @@ function styles() {
 		"node_modules/swiper/modules/navigation/navigation.scss",
 		"node_modules/swiper/modules/pagination/pagination.scss",
 		"node_modules/swiper/modules/scrollbar/scrollbar.scss", */
-		"src/scss/**/*.scss",
+		//"src/scss/**/*.scss",
+		"src/scss/main.scss",
 	])
 		.pipe(sass())
 		.pipe(concat("main.min.css"))

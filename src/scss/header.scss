@@ -1,13 +1,15 @@
 // Main color
-$default-color           : #323232;
-$orange-color            : #F44920;
-$grey-color              : #F7F7F7;
-$white-color             : #ffffff;
+// $default-color           : #323232;
+// $orange-color            : #F44920;
+// $grey-color              : #F7F7F7;
+// $white-color             : #ffffff;
 
 .header {
+  min-height: 720px;
   position: relative;
-  padding-top: 50px;
-  padding-bottom: 51px;
+  overflow: hidden;
+  width: 100%;
+  padding-top: rem(20);
 
   .header__bg {
     position: absolute;
@@ -21,6 +23,39 @@ $white-color             : #ffffff;
     background-color: rgba(0, 0, 0, 0);
     background-repeat: no-repeat;
     background-position: 50% 50%;
+  }
+
+  .header__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .header__right {
+      display: flex;
+      align-items: center;
+
+      .header-menu__ul {
+        display: flex;
+        gap: 60px;
+        margin-right: rem(60);
+
+        li {
+          a {
+            color: $white-color;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      .header__social{
+        display: flex;
+        gap: 20px;
+      }
+    }
   }
 }
 

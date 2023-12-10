@@ -5,110 +5,121 @@
 get_header();
 ?>
 
-<section class="home-about">
-  <div class="container">
-    <div class="info">
-      <h1 class="title">
-        <span>Маркетинговое
-          <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/lightning.svg" alt="">
-        </span>
-        <span>
-          <p>агентство</p>
-          <p>полного <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/fire.svg" alt=""></p>
-        </span>
-        <span>
-          <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/fire.svg" alt="">цикла
-        </span>
-      </h1>
-      <div class="dop">
-        <p>Приспособим интернет под потребности клиента</p>
-        <a href="#ex1" rel="modal:open" class="button">Заказать проект</a>
+<section class="home__content">
+  <div class="home__bg"
+    style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/img/bg_home.png');"
+    data-bg="<?php echo get_template_directory_uri() ?>/assets/img/bg_home.png"
+    data-bg-webp="<?php echo get_template_directory_uri() ?>/assets/img/bg_home.png"></div>
+  <div class="home__content--text">
+    <div class="container">
+      <h1 class="title">Мы понимаем ваш бизнес</h1>
+      <div class="subtitle">
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur.</p>
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
       </div>
     </div>
+  </div>
+</section>
+
+
+<section class="projects">
+  <div class="projects__title container">
+    <h3 class="title">Наши последние проекты</h3>
+    <a href="#" class="button">Все наши кейсы <img
+        src="<?php echo get_template_directory_uri() ?>/assets/img/icons/arrow-btn.svg" alt="btn"></a>
+  </div>
+  <div class="projects__content swiper projects__slider">
+    <div class="swiper-wrapper container">
+      <div class="swiper-slide">
+        <div class="projects__content__item">
+          Slide 1
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="projects__content__item">
+          Slide 1
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="projects__content__item">
+          Slide 1
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="projects__content__item">
+          Slide 1
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="projects__content__item">
+          Slide 1
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="projects__content__item">
+          Slide 1
+        </div>
+      </div>
+    </div>
+    <div class="swiper-scrollbar"></div>
   </div>
 </section>
 
 <section class="aboutus">
+  <div class="aboutus__bg"
+    style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/img/about-bg.png');"
+    data-bg="<?php echo get_template_directory_uri() ?>/assets/img/about-bg.png"
+    data-bg-webp="<?php echo get_template_directory_uri() ?>/assets/img/about-bg.png"></div>
   <div class="container">
-    <div class="aboutus__content">
-      <div class="aboutus__text">
-        <h2 class="title"><?php the_field('zagolovok_o_kompanii'); ?></h2>
-        <div class="aboutus__text">
-          <p><?php the_field('pervyj_abzacz_opisanie'); ?></p>
-          <p><?php the_field('vtoroj_abzacz_opisanie'); ?></p>
-          <p><?php the_field('tretij_abzacz_opisanie'); ?></p>
-        </div>
-      </div>
-      <div class="aboutus__icons">
-        <img class="icon" src="<?php echo get_template_directory_uri() ?>/assets/img/icons/about1.svg" alt="icon">
-        <img class="icon" src="<?php echo get_template_directory_uri() ?>/assets/img/icons/super.svg" alt="icon">
-        <img class="icon" src="<?php echo get_template_directory_uri() ?>/assets/img/icons/about2.svg" alt="icon">
-        <img class="icon" src="<?php echo get_template_directory_uri() ?>/assets/img/icons/about3.svg" alt="icon">
-      </div>
+    <div class="aboutus__desk">
+      <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo.svg" alt="logo">
+      <h3 class="title">Aliquet nibh praesent tristique magna sit amet purus. Ultricies mi quis hendrerit</h3>
+      <p class="subtitle">Eu ultrices vitae auctor eu augue ut lectus arcu. Bibendum ut tristique et egestas quis. Urna
+        duis convallis convallis tellus id. Elit pellentesque habitant morbi tristique senectus.</p>
     </div>
   </div>
 </section>
 
 
-
-<section class="projects">
+<section class="clients">
   <div class="container">
-    <h3 class="title">Недавние проекты нашей компании<img
-        src="<?php echo get_template_directory_uri() ?>/assets/img/icons/fire-title.svg" alt="fire"></h3>
-    <div class="projects__content">
-      <div class="projects__content__item">
-        <div>
-          <a href="#" class="item__img">
-            <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/project1.png" alt="projects">
-          </a>
-        </div>
-        <div class="item__data">
-          <div class="data__teg">
-            <span>Ui/UX Дизайн</span>
-            <span>Разработка сайта</span>
-          </div>
-          <div class="data__info">
-            <a href="#" class="title">Название проекта</a>
-            <p class="desk">Сфера проекта</p>
-          </div>
-        </div>
+    <h3 class="title">Наши клиенты</h3>
+    <div class="clients__logo">
+      <div class="logo__item">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/img/clients/unicef.svg" alt="client-logo">
       </div>
-      <div class="projects__content__item">
-        <div>
-          <a href="#" class="item__img">
-            <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/project2.png" alt="projects">
-          </a>
-        </div>
-        <div class="item__data">
-          <div class="data__teg">
-            <span>Ui/UX Дизайн</span>
-            <span>Разработка сайта</span>
-          </div>
-          <div class="data__info">
-            <a href="#" class="title">Название проекта</a>
-            <p class="desk">Сфера проекта</p>
-          </div>
-        </div>
+      <div class="logo__item">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/img/clients/paritbank.svg" alt="client-logo">
       </div>
-      <div class="projects__content__item">
-        <div>
-          <a href="#" class="item__img">
-            <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/project3.png" alt="projects">
-          </a>
-        </div>
-        <div class="item__data">
-          <div class="data__teg">
-            <span>Ui/UX Дизайн</span>
-            <span>Разработка сайта</span>
-          </div>
-          <div class="data__info">
-            <a href="#" class="title">Название проекта</a>
-            <p class="desk">Сфера проекта</p>
-          </div>
-        </div>
+      <div class="logo__item">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/img/clients/a1.svg" alt="client-logo">
+      </div>
+      <div class="logo__item">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/img/clients/minsk.svg" alt="client-logo">
+      </div>
+      <div class="logo__item">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/img/clients/fix.svg" alt="client-logo">
+      </div>
+      <div class="logo__item">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/img/clients/alfa.svg" alt="client-logo">
+      </div>
+      <div class="logo__item">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/img/clients/iom.svg" alt="client-logo">
+      </div>
+      <div class="logo__item">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/img/clients/coca-cola.svg" alt="client-logo">
+      </div>
+      <div class="logo__item">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/img/clients/huawei.svg" alt="client-logo">
+      </div>
+      <div class="logo__item">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/img/clients/hoster.svg" alt="client-logo">
       </div>
     </div>
-    <a href="#" class="button">Все проекты</a>
   </div>
 </section>
 
@@ -122,19 +133,19 @@ get_header();
       подход к воплощению проектов в жизнь.</p>
     <div class="team__content">
 
-    <?php while( have_rows('sotrudniki', 60) ): the_row(); 
+      <?php while( have_rows('sotrudniki', 60) ): the_row(); 
         // переменные
         $imageSotrudnika = get_sub_field('kartinka_sotrudnika');
         $fioSotrudnika = get_sub_field('fio_sotrudnika');
         $dolznostSotrudnika = get_sub_field('dolzhnost_sotrudnika');
     ?>
       <div class="team__item">
-          <img src="<?php echo $imageSotrudnika['url']; ?>" alt="<?php echo $imageSotrudnika['alt'] ?>" />
-          <p class="name"><?php echo $fioSotrudnika; ?></p>
-          <p class="job"><?php echo $dolznostSotrudnika; ?></p>
+        <img src="<?php echo $imageSotrudnika['url']; ?>" alt="<?php echo $imageSotrudnika['alt'] ?>" />
+        <p class="name"><?php echo $fioSotrudnika; ?></p>
+        <p class="job"><?php echo $dolznostSotrudnika; ?></p>
       </div>
 
-    <?php endwhile; ?>
+      <?php endwhile; ?>
 
     </div>
     <a href="#ex1" rel="modal:open" class="button">Узнать больше</a>
@@ -172,15 +183,15 @@ get_header();
       <div>
         <p><?php the_field('pervyj_abzacz_interesy'); ?></p>
         <p><?php the_field('vtoroj_abzacz_interesy'); ?></p>
-        
+
         <?php if( have_rows('spisok_interesov') ): ?>
         <ul>
-        <?php while( have_rows('spisok_interesov') ): the_row(); 
+          <?php while( have_rows('spisok_interesov') ): the_row(); 
           // переменные
           $textSpiska = get_sub_field('tekst_spiska');
         ?>
           <li><?php echo $textSpiska; ?></li>
-        <?php endwhile; ?>
+          <?php endwhile; ?>
         </ul>
         <?php endif; ?>
 
@@ -439,9 +450,8 @@ get_header();
       </div>
     </div>
     <div class="contacts__map">
-      <iframe
-        src="<?php the_field('ssylka_na_yandeks_kartu', 'option') ?>"
-        width="100%" height="485" frameborder="0"></iframe>
+      <iframe src="<?php the_field('ssylka_na_yandeks_kartu', 'option') ?>" width="100%" height="485"
+        frameborder="0"></iframe>
     </div>
   </div>
 </section>

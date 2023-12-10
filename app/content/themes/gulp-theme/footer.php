@@ -152,6 +152,33 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
 <script>
+    var swiper = new Swiper(".projects__slider", {
+      slidesPerView: 3,
+      spaceBetween: 40,
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      },
+
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 15
+        },
+        // when window width is >= 480px
+        480: {
+          slidesPerView: 2,
+          spaceBetween: 10
+        },
+        // when window width is >= 640px
+        769: {
+          slidesPerView: 3,
+          spaceBetween: 40
+        }
+      }
+    });
+
   var swiper = new Swiper(".services__content", {
     slidesPerView: 5,
     spaceBetween: 10,

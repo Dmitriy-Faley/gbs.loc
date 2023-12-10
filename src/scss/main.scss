@@ -1,16 +1,18 @@
-@import './plagins/slick.scss';
-@import './plagins/slick-theme.scss';
+// @import './plagins/slick.scss';
+// @import './plagins/slick-theme.scss';
 
-@import "utils/libs";
+@import "./utils/libs";
 @import "./utils/vars";
-@import "utils/mixins";
-@import "utils/fonts";
-@import "utils/reset";
-/* 
-@import "./header";
-@import "./footer";
-@import "./wraper";
- */
+@import "./utils/mixins";
+@import "./utils/fonts";
+@import "./utils/reset";
+
+@import "header";
+@import "footer";
+@import "wraper";
+
+@import "portfolio";
+
 
 html {
     line-height: $mainLineHeight;
@@ -23,9 +25,9 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Mont';
     font-size: $mainFontSize;
-    font-weight: 400;
+    font-weight: 600;
     background-color: #fff;
     background-attachment: fixed;
     background-position: 50% 15%;
@@ -183,7 +185,7 @@ span::selection {
 
 .container {
     width: 97%;
-    max-width: 1390px;
+    max-width: 1680px;
     margin: 0 auto;
 
     @media screen and (max-width: 1368px) {
@@ -209,20 +211,19 @@ span::selection {
     position: relative;
     overflow: hidden;
     display: block;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 20px;
+    font-size: rem(24);
+    font-weight: 600;
+    line-height: 24px;
     background: $orange-color;
-    border-radius: 50px;
-    color: $default-color;
+    border-radius: 12px;
+    color: $white-color;
     cursor: pointer;
-    padding: 18px 0 20px 0;
-    transition: all 0.3s ease-in-out;
+    padding: 20px 24px;
+    transition: all 0.2s ease-in-out;
     text-align: center;
-    width: 218px;
 
     &:hover {
-        background: $orange-color ;
+        background: #F66D4D;
     }
 
     &:active {}
@@ -236,20 +237,10 @@ span::selection {
 
 
 .title {
-    font-weight: 600;
+    font-weight: 400;
     font-size: 48px;
-    line-height: 58px;
-    width: 655px;
-    padding-bottom: 40px;
+    line-height: 48px;
     color: $default-color;
-}
-
-.vacancie-title-name {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    color: #ACAFB5;
-    padding-bottom: 30px;
 }
 
 .fixed {
@@ -536,7 +527,6 @@ span::selection {
     .title {
         font-size: 2.134rem;
         line-height: 41px;
-        width: 465px;
         padding-bottom: 30px;
     }
 
@@ -647,7 +637,6 @@ span::selection {
     .title {
         font-size: 3rem;
         line-height: 58px;
-        width: 654px;
         width: calc(100% - 54px);
         padding-bottom: 40px;
     }
