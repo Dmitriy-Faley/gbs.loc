@@ -6,361 +6,51 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 100px 0;
+    padding: 100px 0 120px 0;
 
-    
+    .footer__menu {
+      display: flex;
+      gap: 200px;
+
+      .footer__menu--list {
+        p {
+          font-size: 24px;
+          font-weight: 500;
+          padding-bottom: 42px;
+        }
+
+        ul {
+          li {
+            a {
+              font-size: 32px;
+              font-weight: 500;
+              color: $white-color;
+            }
+            &:not(:last-child) {
+              padding-bottom: 24px;
+            }
+          }
+        }
+      }
+    }
   }
 
   .footer__bottom {
-    padding: 50px 0 74px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    padding-bottom: 20px;
+    font-size: 24px;
+    font-weight: 500;
   }
 }
 
 /* 1369 - 1600 px */
-@media screen and (max-width: 1600px) {
-  .footer .footer__top .footer__social {
-    width: 52%;
-  }
-}
+@media screen and (max-width: 1600px) {}
 
-@media screen and (max-width: 1368px) {
-  .footer {
-    .footer__top {
-      padding: 70px 0;
-
-      .footer__contacts {
-        .footer__logo {
-          width: 106.01px;
-          padding-bottom: 46px !important;
-        }
-
-        a {
-          font-size: 14px;
-          line-height: 20px;
-
-          &:not(:last-child) {
-            padding-bottom: 22px;
-          }
-        }
-      }
-
-      .footer__social {
-        >div {
-          row-gap: 30px;
-        }
-
-        a {
-          font-size: 14px;
-          line-height: 14px;
-          //width: 20%;
-
-          &:nth-child(1) {
-            svg {
-              width: 16px;
-              height: 16px;
-            }
-          }
-
-          &:nth-child(2) {
-            svg {
-              width: 18px;
-              height: 11px;
-            }
-          }
-
-          &:nth-child(3) {
-            svg {
-              width: 7.83px;
-              height: 16px;
-            }
-          }
-
-          &:nth-child(4) {
-            svg {
-              width: 19.21px;
-              height: 12.81px;
-            }
-          }
-
-          &:nth-child(5) {
-            svg {
-              width: 17.08px;
-              height: 13.52px;
-            }
-          }
-
-          &:nth-child(6) {
-            svg {
-              width: 16.36px;
-              height: 16.36px;
-            }
-          }
-
-          &:last-child {
-            width: 150px;
-
-            svg {
-              width: 9.96px;
-              height: 17.08px;
-            }
-          }
-
-          svg {
-            margin-right: 5px;
-            vertical-align: middle;
-          }
-        }
-      }
-    }
-
-    .footer__bottom {
-      padding: 30px 0 30px 0;
-
-      .copy {
-        font-size: 12px;
-        line-height: 14px;
-      }
-
-      .footer__bottom__menu {
-        a {
-          font-size: 12px;
-          line-height: 14px;
-          padding-left: 20px;
-        }
-      }
-    }
-  }
-}
+@media screen and (max-width: 1368px) {}
 
 
-@media screen and (max-width: 768px) {
-  .footer {
-    .footer__top {
-      padding: 90px 0 35px 0;
-      flex-direction: column;
+@media screen and (max-width: 768px) {}
 
-      .footer__contacts {
-        padding-bottom: 65px;
-
-        .footer__logo {
-          width: 149px;
-          padding-bottom: 65px !important;
-        }
-
-        a {
-          font-size: 20px;
-          line-height: 28px;
-
-          &:not(:last-child) {
-            padding-bottom: 30px;
-          }
-        }
-      }
-
-      .footer__social {
-        width: 83%;
-
-        >div {
-          row-gap: 42px;
-        }
-
-        a {
-          font-size: 1rem;
-          line-height: 19px;
-
-          &:nth-child(1) {
-            svg {
-              width: 23px;
-              height: 23px;
-            }
-          }
-
-          &:nth-child(2) {
-            svg {
-              width: 26px;
-              height: 16px;
-            }
-          }
-
-          &:nth-child(3) {
-            svg {
-              width: 11px;
-              height: 23px;
-            }
-          }
-
-          &:nth-child(4) {
-            svg {
-              width: 27px;
-              height: 18.01px;
-            }
-          }
-
-          &:nth-child(5) {
-            svg {
-              width: 24px;
-              height: 19px;
-            }
-          }
-
-          &:nth-child(6) {
-            svg {
-              width: 23px;
-              height: 23px;
-            }
-          }
-
-          &:last-child {
-            width: 150px;
-
-            svg {
-              width: 14px;
-              height: 24px;
-            }
-          }
-
-        }
-      }
-    }
-
-    .footer__bottom {
-      flex-direction: column-reverse;
-      align-items: flex-start;
-      padding: 30px 0 70px 0;
-
-      .copy {
-        font-size: 1rem;
-        line-height: 19px;
-        padding-top: 10px;
-      }
-
-      .footer__bottom__menu {
-        display: flex;
-        flex-direction: column;
-
-        a {
-          font-size: 1rem;
-          line-height: 19px;
-          padding-left: 0;
-          padding-bottom: 20px;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width:480px) {
-  .footer {
-    .footer__top {
-      padding: 40px 0;
-
-      .footer__contacts {
-        padding-bottom: 50px;
-
-        .footer__logo {
-          padding-bottom: 50px !important;
-        }
-
-        a {
-          font-size: 1rem;
-          line-height: 22px;
-
-          &:not(:last-child) {
-            padding-bottom: 20px;
-          }
-        }
-      }
-
-      .footer__social {
-        width: 100%;
-
-        >div {
-          row-gap: 21px;
-        }
-
-        a {
-          font-size: 12px;
-          line-height: 14px;
-          width: 33.3%;
-
-          &:nth-child(1) {
-            svg {
-              width: 17.62px;
-              height: 17.62px;
-            }
-          }
-
-          &:nth-child(2) {
-            svg {
-              width: 19.92px;
-              height: 12.26px;
-            }
-          }
-
-          &:nth-child(3) {
-            svg {
-              width: 8.43px;
-              height: 17.62px;
-            }
-          }
-
-          &:nth-child(4) {
-            svg {
-              width: 20.69px;
-              height: 13.8px;
-            }
-          }
-
-          &:nth-child(5) {
-            svg {
-              width: 18.39px;
-              height: 14.56px;
-            }
-          }
-
-          &:nth-child(6) {
-            svg {
-              width: 17.62px;
-              height: 17.62px;
-            }
-          }
-
-          &:last-child {
-            width: 150px;
-
-            svg {
-              width: 10.73px;
-              height: 18.39px;
-            }
-          }
-        }
-      }
-    }
-
-    .footer__bottom {
-      padding: 10px 0 35px 0;
-
-      .copy {
-        font-size: 14px;
-        line-height: 17px;
-        padding-top: 31px;
-      }
-
-      .footer__bottom__menu {
-        display: flex;
-        flex-direction: column;
-
-        a {
-          font-size: 14px;
-          line-height: 17px;
-          padding-left: 0;
-          padding-bottom: 15px;
-        }
-      }
-    }
-  }
-}
+@media screen and (max-width:480px) {}

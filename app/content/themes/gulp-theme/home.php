@@ -36,17 +36,29 @@ get_header();
     <div class="swiper-wrapper container">
       <div class="swiper-slide">
         <div class="projects__content__item">
-          Slide 1
+          <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/project1.png" alt="project">
+          <div class="item__content">
+            <p class="project__title">Paritetbank</p>
+            <p class="project__desk">PR-мероприятия</p>
+          </div>
         </div>
       </div>
       <div class="swiper-slide">
         <div class="projects__content__item">
-          Slide 1
+          <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/project2.png" alt="project">
+          <div class="item__content">
+            <p class="project__title">Paritetbank</p>
+            <p class="project__desk">PR-мероприятия</p>
+          </div>
         </div>
       </div>
       <div class="swiper-slide">
         <div class="projects__content__item">
-          Slide 1
+          <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/project3.png" alt="project">
+          <div class="item__content">
+            <p class="project__title">Paritetbank</p>
+            <p class="project__desk">PR-мероприятия</p>
+          </div>
         </div>
       </div>
       <div class="swiper-slide">
@@ -65,7 +77,9 @@ get_header();
         </div>
       </div>
     </div>
-    <div class="swiper-scrollbar"></div>
+    <div class="container">
+      <div class="swiper-scrollbar"></div>
+    </div>
   </div>
 </section>
 
@@ -84,6 +98,27 @@ get_header();
   </div>
 </section>
 
+
+<section class="services">
+  <div class="container">
+    <div class="services__title">
+      <h3 class="title">Наши услуги</h3>
+      <a href="#" class="button">Все наши кейсы <img
+          src="<?php echo get_template_directory_uri() ?>/assets/img/icons/arrow-btn.svg" alt="btn"></a>
+    </div>
+    <div class="services__content">
+      <div class="services__item">
+        <p class="title">Public Relations</p>
+        <div class="text">
+          <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui. Pharetra
+            pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.</p>
+          <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui. Pharetra
+            pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="clients">
   <div class="container">

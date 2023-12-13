@@ -6,9 +6,57 @@
         <a href="/" class="footer__logo">
 					<img src="<?php echo get_template_directory_uri() ?>/assets/img/logo.svg" alt="logo site" />
 				</a>
+        <div class="footer__menu">
+          <div class="footer__menu--list">
+            <p>Наши контакты</p>
+            <ul>
+              <li>
+                <a href="mailto:hello@gbs.com">hello@gbs.com</a>
+              </li>
+              <li>
+                <a href="tel:+375 44 774 00 49">+375 44 774 00 49</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__menu--list">
+            <p>О нас</p>
+            <ul>
+              <li>
+                <a href="#">Главная</a>
+              </li>
+              <li>
+                <a href="#">Главная</a>
+              </li>
+              <li>
+                <a href="#">Главная</a>
+              </li>
+              <li>
+                <a href="#">Главная</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__menu--list">
+            <p>Соцсети</p>
+            <ul>
+              <li>
+                <a href="#">Instagram</a>
+              </li>
+              <li>
+                <a href="#">Youtube</a>
+              </li>
+              <li>
+                <a href="#">Главная</a>
+              </li>
+              <li>
+                <a href="#">Главная</a>
+              </li>
+            </ul>
+          </div>
+        </div>
     </div>
     <div class="footer__bottom">
-      
+      <div>© 2014 - 2023 GBS</div>
+      <div>ул. Красная 13, офис 24, 220005, Минск, Беларусь</div>
     </div>
   </div>
 </footer>
