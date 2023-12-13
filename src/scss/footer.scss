@@ -1,124 +1,14 @@
 .footer {
+  background-color: $orange-color;
+  color: $white-color;
+
   .footer__top {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     padding: 100px 0;
 
-    .footer__contacts {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      //width: 50%;
-
-      .footer__logo {
-        padding-bottom: 65px !important;
-      }
-
-      a {
-        display: block;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 28px;
-        color: #0E0F11;
-        transition: all 0.2s ease-in;
-
-        &:not(:last-child) {
-          padding-bottom: 30px;
-        }
-
-        &:hover {
-          color: #DC7148;
-        }
-      }
-    }
-
-    .footer__social {
-      display: flex;
-      justify-content: flex-end;
-      width: 43%;
-
-      >div {
-        display: flex;
-        flex-wrap: wrap;
-        row-gap: 42px;
-      }
-
-      a {
-        display: block;
-        width: 25%;
-        transition: all 0.2s ease;
-
-        svg {
-          margin-right: 8px;
-          vertical-align: bottom;
-
-          path {
-            transition: all 0.2s ease;
-          }
-        }
-
-        &:nth-child(1) {
-          svg {
-            width: 23px;
-            height: 23px;
-          }
-        }
-
-        &:nth-child(2) {
-          svg {
-            width: 26px;
-            height: 16px;
-          }
-        }
-
-        &:nth-child(3) {
-          svg {
-            width: 11px;
-            height: 23px;
-          }
-        }
-
-        &:nth-child(4) {
-          svg {
-            width: 27px;
-            height: 18.01px;
-          }
-        }
-
-        &:nth-child(5) {
-          svg {
-            width: 24px;
-            height: 19px;
-          }
-        }
-
-        &:nth-child(6) {
-          svg {
-            width: 23px;
-            height: 23px;
-          }
-        }
-
-        &:last-child {
-          width: 150px;
-
-          svg {
-            width: 14px;
-            height: 24px;
-          }
-        }
-
-
-        &:hover {
-          color: #DC7148;
-
-          svg path {
-            fill: #DC7148;
-          }
-        }
-      }
-    }
+    
   }
 
   .footer__bottom {
@@ -126,33 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    .copy {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-      color: #ACAFB5;
-      transition: all 0.2s ease-in;
-
-      &:hover {
-        color: #0E0F11;
-      }
-    }
-
-    .footer__bottom__menu {
-      a {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
-        color: #ACAFB5;
-        padding-left: 40px;
-        transition: all 0.2s ease-in;
-
-        &:hover {
-          color: #0E0F11;
-        }
-      }
-    }
+    
   }
 }
 
