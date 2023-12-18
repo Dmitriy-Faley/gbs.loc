@@ -106,14 +106,77 @@ get_header();
       <a href="#" class="button">Все наши кейсы <img
           src="<?php echo get_template_directory_uri() ?>/assets/img/icons/arrow-btn.svg" alt="btn"></a>
     </div>
-    <div class="services__content">
-      <div class="services__item">
-        <p class="title">Public Relations</p>
-        <div class="text">
-          <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui. Pharetra
-            pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.</p>
-          <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui. Pharetra
-            pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.</p>
+    <div class="swiper services__content">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="services__item">
+            <p class="title">Public Relations</p>
+            <div class="text">
+              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui. Pharetra
+                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.</p>
+              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui. Pharetra
+                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.</p>
+            </div>
+            <div class="button-more">Узнать больше
+              <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/btn-more.svg" alt="btn-more">
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="services__item">
+            <p class="title">Public Relations</p>
+            <div class="text">
+              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui. Pharetra
+                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.</p>
+              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui. Pharetra
+                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.</p>
+            </div>
+            <div class="button-more">Узнать больше
+              <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/btn-more.svg" alt="btn-more">
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="services__item">
+            <p class="title">Public Relations</p>
+            <div class="text">
+              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui. Pharetra
+                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.</p>
+              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui. Pharetra
+                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.</p>
+            </div>
+            <div class="button-more">Узнать больше
+              <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/btn-more.svg" alt="btn-more">
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="services__item">
+            <p class="title">Public Relations</p>
+            <div class="text">
+              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui. Pharetra
+                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.</p>
+              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui. Pharetra
+                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.</p>
+            </div>
+            <div class="button-more">Узнать больше
+              <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/btn-more.svg" alt="btn-more">
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="services__item">
+            <p class="title">Public Relations</p>
+            <div class="text">
+              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui. Pharetra
+                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.</p>
+              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui. Pharetra
+                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.</p>
+            </div>
+            <div class="button-more">Узнать больше
+              <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/btn-more.svg" alt="btn-more">
+            </div>
+          </div>
         </div>
       </div>
     </div>

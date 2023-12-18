@@ -67,10 +67,10 @@
 
     .swiper-slide {
       //width: 533px;
+    }
 
-      .swiper-scrollbar-drag{
-        background: $orange-color;
-      }
+    .swiper-scrollbar-drag {
+      background: $orange-color;
     }
 
     .projects__content__item {
@@ -150,14 +150,51 @@
   }
 }
 
-.services{
-  .services__title{
+.services {
+  padding: 45px 0 60px 0;
+  background-color: #F7F7F7;
+
+  .services__title {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 27px;
   }
 
-  .services__content{
-    
+  .services__content {
+    .services__item {
+      width: 533.333px;
+      height: 505px;
+      flex-shrink: 0;
+      border-radius: 20px;
+      background: #FFF;
+      padding: 60px 40px 40px 40px;
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        font-size: 32px;
+        color: $orange-color;
+        padding-bottom: 40px;
+      }
+
+      .text {
+        p {
+          &:not(:last-child) {
+            padding-bottom: 20px;
+          }
+        }
+      }
+
+      .button-more {
+        font-size: 24px;
+        line-height: 24px;
+        margin-top: auto;
+
+        img{
+          margin-left: 20px;
+        }
+      }
+    }
   }
 }
 
