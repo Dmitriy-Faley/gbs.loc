@@ -18,7 +18,7 @@
     <div class="connect__form">
       <div class="form__text">
         <p class="title">Вы можете рассказать нам о своем проекте и о том, как мы можем помочь</p>
-        <p class="sibtitle">
+        <p class="subtitle">
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </p>
         <div class="btn__dowlonds">

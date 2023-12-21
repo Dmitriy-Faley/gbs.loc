@@ -119,11 +119,38 @@
         // when window width is >= 480px
         480: {
           slidesPerView: 2,
-          spaceBetween: 10
+          spaceBetween: 12
         },
         // when window width is >= 640px
         769: {
           slidesPerView: 3,
+          spaceBetween: 40
+        }
+      }
+    });
+
+    var swiper = new Swiper(".gallery__slider", {
+      slidesPerView: 2,
+      spaceBetween: 40,
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      },
+
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 15
+        },
+        // when window width is >= 480px
+        480: {
+          slidesPerView: 2,
+          spaceBetween: 10
+        },
+        // when window width is >= 640px
+        769: {
+          slidesPerView: 2,
           spaceBetween: 40
         }
       }
@@ -149,7 +176,47 @@
           slidesPerView: 3,
           spaceBetween: 40
         }
-      }
+      },
+
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      },
+      
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+    });
+
+    var swiper = new Swiper(".reviews__content", {
+      slidesPerView: 3,
+      spaceBetween: 40,
+
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 15
+        },
+        // when window width is >= 480px
+        480: {
+          slidesPerView: 2,
+          spaceBetween: 10
+        },
+        // when window width is >= 640px
+        769: {
+          slidesPerView: 3,
+          spaceBetween: 40
+        }
+      },
+      
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      
     });
 </script>
 

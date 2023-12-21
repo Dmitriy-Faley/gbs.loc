@@ -10,6 +10,7 @@
   overflow: hidden;
   width: 100%;
   padding-top: rem(20);
+  z-index: 99;
 
   .header__bg {
     position: absolute;
@@ -51,7 +52,7 @@
         }
       }
 
-      .header__social{
+      .header__social {
         display: flex;
         gap: 20px;
       }
@@ -80,111 +81,27 @@
   overflow: hidden;
 }
 
-@media screen and (max-width: 1368px) {
-  .header {
-    padding-top: 36px;
-
-    .header__menu {
-      .header__logo img {
-        width: 106.01px;
-      }
-
-      .header__list {
-        .topmenu {
-          gap: 30px;
-
-          li a {
-            font-size: 14px;
-            line-height: 20px;
-          }
-        }
-      }
-
-      .header__phone {
-        a {
-          font-size: 14.23px;
-          line-height: 20px;
-        }
-      }
-    }
-  }
-
-  .header-menu__ul {
-    gap: 30px;
-
-    >li {
-      >a {
-        font-size: 14px;
-        line-height: 20px;
-      }
-    }
-  }
-}
+@media screen and (max-width: 1368px) {}
 
 @media screen and (max-width: 960px) {}
 
 @media screen and (max-width: 768px) {
   .header {
-    padding-top: 30px;
+    min-height: 740px;
 
     .header__menu {
 
-      .menu__but-open.activeBut,
-      .menu__but-close.activeBut {
-        display: block;
-      }
-
-
-      .header__logo img {
-        width: 100%;
-      }
-
-      .header__list {
-        display: none;
-      }
-
-      .header__phone {
-        a {
-          font-size: 20px;
-          line-height: 28px;
+      .header__logo {
+        img {
+          width: 98px;
         }
       }
-    }
-  }
-}
 
-@media screen and (max-width: 480px) {
-  .header {
-    padding-top: 18px;
-
-    .header__menu {
-      .menu__but-open {
-        width: 31px;
-      }
-
-      .menu__but-open span,
-      .menu__but-open span:after,
-      .menu__but-open span:before {
-        margin-top: -1px;
-        width: 32px;
-        height: 2px;
-      }
-
-      .menu__but-open span:before {
-        transform: translateY(-7px);
-      }
-
-      .menu__but-open span:after {
-        transform: translateY(10px);
-      }
-
-      .header__logo img {
-        width: 84px;
-      }
-
-      .header__phone {
+      .header__right {
         display: none;
       }
     }
   }
 }
+
+@media screen and (max-width: 480px) {}

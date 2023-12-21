@@ -159,9 +159,8 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    border: 1px solid #EA464D;
-    -webkit-text-fill-color: $default-color;
-    -webkit-box-shadow: 0 0 0px 0px #000 inset;
+    -webkit-text-fill-color: $white-color;
+    -webkit-box-shadow: 0 0 0px 0px #fff inset;
     transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -233,8 +232,8 @@ span::selection {
 
 
 .title {
+    font-size: rem(48);
     font-weight: 400;
-    font-size: 48px;
     line-height: 48px;
     color: $default-color;
 }
@@ -521,26 +520,7 @@ span::selection {
 /* 961 - 1368 px */
 @media screen and (max-width: 1368px) {
     .title {
-        font-size: 2.134rem;
-        line-height: 41px;
-        padding-bottom: 30px;
-    }
-
-    .vacancie-title-name {
-        font-size: 14px;
-        line-height: 17px;
-        padding-bottom: 42px;
-    }
-
-    .button {
-        font-size: 14px;
-        width: 180px;
-        padding: 11px 0 12px 0;
-    }
-
-    .button-more {
-        width: 155px;
-        margin-top: 45px !important;
+        
     }
 
     .fixed,
@@ -631,41 +611,18 @@ span::selection {
 /* 481 - 768 px */
 @media screen and (max-width: 768px) {
     .title {
-        font-size: 3rem;
-        line-height: 58px;
-        width: calc(100% - 54px);
+        font-size: rem(32);
+        line-height: 32px;
         padding-bottom: 40px;
     }
 
-    .vacancie-title-name {
-        font-size: 16px;
-        line-height: 19px;
-        padding-bottom: 60px;
-    }
-
     .button {
-        font-size: 1rem;
-        width: 218px;
-        padding: 18px 0 20px 0;
+        font-size: 20px;
     }
 
     .fixed,
     .active_header {
         padding: 30px 0;
-    }
-
-    .wheel {
-        width: 76.33px;
-        height: 76.33px;
-
-        img {
-            width: 39.25px;
-        }
-
-        .wheel__letter {
-            font-size: 11px;
-            padding-bottom: 35px;
-        }
     }
 
     .modal {
@@ -730,41 +687,10 @@ span::selection {
         padding-bottom: 30px;
     }
 
-    .vacancie-title-name {
-        text-align: center;
-        padding-bottom: 30px;
-    }
-
-    .button {
-        font-size: 1rem;
-        width: 200px;
-        padding: 16px 0 17px 0;
-    }
-
-    .button-more {
-        width: 200px;
-        margin-top: 33px !important;
-    }
 
     .fixed,
     .active_header {
         padding: 20px 0;
-    }
-
-    .wheel {
-        width: 59.62px;
-        height: 59.62px;
-        right: 0;
-
-        img {
-            width: 30.66px;
-        }
-
-        .wheel__letter {
-            font-size: 9.18259px;
-            line-height: 11px;
-            padding-bottom: 35px;
-        }
     }
 
     #ex1 {
