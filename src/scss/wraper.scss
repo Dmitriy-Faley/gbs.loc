@@ -1,7 +1,5 @@
 .home__content {
   min-height: 720px;
-  position: absolute;
-  top: 0;
   overflow: hidden;
   width: 100%;
 
@@ -44,6 +42,13 @@
     }
   }
 
+  .btn-down {
+    display: none;
+    position: relative;
+    z-index: 2;
+    background: transparent;
+  }
+
 }
 
 
@@ -69,6 +74,10 @@
 
     .scrollbar {
       margin-top: 60px;
+
+      .swiper-scrollbar {
+        height: 2px;
+      }
     }
 
     .swiper-scrollbar-drag {
@@ -223,6 +232,11 @@
       padding: 60px 40px 40px 40px;
       display: flex;
       flex-direction: column;
+      transition: all .2s ease;
+
+      &:hover{
+        box-shadow: 4px 4px 14.3px 0px rgba(50, 50, 50, 0.10);
+      }
 
       .title {
         font-size: 32px;
@@ -350,6 +364,16 @@
     left: auto;
   }
 
+  .scrollbar {
+    .swiper-scrollbar {
+      display: none;
+
+      .swiper-scrollbar-drag {
+        background: $orange-color;
+      }
+    }
+  }
+
   .reviews__content {
     .reviews__item {
       //width: 533.333px;
@@ -360,6 +384,11 @@
       padding: 60px 40px 60px 40px;
       display: flex;
       flex-direction: column;
+      transition: all .2s ease;
+
+      &:hover{
+        box-shadow: 4px 4px 14.3px 0px rgba(50, 50, 50, 0.10);
+      }
 
       .reviews__logo {
         width: 142px;
@@ -547,6 +576,12 @@
         }
       }
     }
+
+    .btn-down {
+      display: block;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
   }
 
   .projects {
@@ -694,6 +729,14 @@
       display: none;
     }
 
+    .scrollbar {
+      margin-top: 40px;
+
+      .swiper-scrollbar {
+        display: block;
+      }
+    }
+
     .reviews__content {
       .reviews__item {
         min-height: 426px;
@@ -771,6 +814,8 @@
       gap: 40px;
 
       .form__text {
+        width: 100%;
+
         .title {
           font-size: 32px;
           line-height: 32px;
@@ -806,7 +851,7 @@
           font-size: 16px;
         }
 
-        input[type="text"]{
+        input[type="text"] {
           margin-bottom: rem(40);
         }
 
@@ -820,7 +865,7 @@
           }
         }
 
-        .button{
+        .button {
           margin-top: 40px;
           width: 100%;
         }
@@ -830,6 +875,10 @@
 }
 
 @media screen and (max-width:480px) {
+  * {
+    //border: 1px solid red;
+  }
+
   .home__content {
     min-height: 812px;
 
@@ -847,11 +896,109 @@
 
       .subtitle {
         width: 335px;
+      }
+    }
+  }
 
-        p {
-          font-size: 14px;
+  .aboutus {
+    .aboutus__desk {
+
+      .title,
+      .subtitle {
+        width: auto;
+      }
+    }
+  }
+
+  .projects {
+    .projects__content {
+      .projects__content__item {
+        //height: 420px;
+
+        img {
+          object-fit: cover;
         }
       }
+
+      .scrollbar {
+        margin-top: 40px;
+      }
+    }
+
+    .button {
+      width: 90%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+
+  .clients {
+    .clients__logo {
+      .logo__item {
+        width: 85px;
+      }
+    }
+  }
+
+  .gallery {
+    .desk {
+      width: 100%;
+    }
+
+    .gallery__content {}
+  }
+
+  .reviews .reviews__content .reviews__item {
+    .title {
+      padding: 40px 0 12px 0;
+    }
+
+    .founder {
+      padding-top: 20px;
+    }
+  }
+
+  .connect {
+    .connect__form {
+      .form__text {
+        .title {
+          width: 100%;
+        }
+
+        .subtitle {
+          width: 100%;
+        }
+
+        .btn__dowlonds {
+          a {
+            width: 100%;
+          }
+        }
+      }
+
+      .form {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:360px) {
+  .home__content{
+    .home__content--text{
+      .title,
+      .subtitle{
+        width: auto;
+      }
+      .title{
+        font-size: 42px;
+      }
+    }
+  }
+  .gallery {
+    .title {
+      font-size: 28px;
     }
   }
 }
@@ -885,4 +1032,3 @@
     max-height: 655px;
   }
 } */
-

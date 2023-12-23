@@ -12,7 +12,7 @@ function gulp_scripts() {
   wp_enqueue_script( 'jquery' );
   
   // при подключении slick.min.js будут проблемы с работой слайдеров
-  wp_enqueue_script( 'slick-script', get_template_directory_uri() . '/assets/js/slick.js', array(), '1.1', true ); 
+  //wp_enqueue_script( 'slick-script', get_template_directory_uri() . '/assets/js/slick.js', array(), '1.1', true ); 
   wp_enqueue_script( 'gulp-script', get_template_directory_uri() . '/assets/main.min.js', array(), '1.1', true );
 }
 // Добавить скрипты и стили на сайт
@@ -184,7 +184,7 @@ function dimox_breadcrumbs() {
 	$text['page']     = 'Страница %s'; // текст 'Страница N'
 	$text['cpage']    = 'Страница комментариев %s'; // текст 'Страница комментариев N'
 
-	$wrap_before    = '<div class="container" itemscope itemtype="http://schema.org/BreadcrumbList">'; // открывающий тег обертки
+	$wrap_before    = '<div class="breadcrumbs container" itemscope itemtype="http://schema.org/BreadcrumbList">'; // открывающий тег обертки
 	$wrap_after     = '</div><!-- .breadcrumbs -->'; // закрывающий тег обертки
 	$sep            = '<span class="separator"></span>'; // разделитель между "крошками"
 	$before         = '<span class="breadcrumbs__current">'; // тег перед текущей "крошкой"

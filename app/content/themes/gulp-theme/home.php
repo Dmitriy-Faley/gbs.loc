@@ -18,12 +18,15 @@ get_header();
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
+      <button type="button" class="btn-down">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/img/btn-down.svg" alt="btn-down">
+      </button>
     </div>
   </div>
 </section>
 
 
-<section class="projects">
+<section class="projects" id="projects">
   <div class="projects__title container">
     <h3 class="title">Наши последние проекты</h3>
     <a href="#" class="button">Все наши кейсы <img
@@ -432,7 +435,9 @@ get_header();
           </div>
         </div>
       </div>
-
+      <div class="scrollbar container">
+        <div class="swiper-scrollbar"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -441,7 +446,16 @@ get_header();
 <?php theme_sidebar( 'form' ); ?>
 
 
+<script>
+  var hiddenElement = document.getElementById("projects");
+  var btn = document.querySelector(".btn-down");
 
+  function handleButtonClick() {
+    hiddenElement.scrollIntoView({ block: "center", behavior: "smooth" });
+  }
+
+  btn.addEventListener("click", handleButtonClick);
+</script>
 
 
 <?php get_footer(); ?>

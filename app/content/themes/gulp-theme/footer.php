@@ -211,6 +211,11 @@
           spaceBetween: 40
         }
       },
+
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      },
       
       navigation: {
         nextEl: ".swiper-button-next",

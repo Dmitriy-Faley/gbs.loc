@@ -11,7 +11,9 @@
 @import "footer";
 @import "wraper";
 
+@import "contacts";
 @import "portfolio";
+
 
 
 html {
@@ -188,8 +190,7 @@ span::selection {
     margin: 0 auto;
 
     @media screen and (max-width: 1368px) {
-        //max-width: 985px;
-        max-width: 995px;
+       
     }
 
     @media screen and (max-width: $smDesktopWidth) {
@@ -240,17 +241,69 @@ span::selection {
 
 .fixed {
     position: fixed;
-    z-index: 99;
+    z-index: 50;
     top: 0;
     width: 100%;
-    background: $orange-color;
+    border-bottom: 0.5px solid #D9D9D9;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.85) 100%);
+    backdrop-filter: blur(7.5px);
     transition: all .3s ease-in-out;
-    padding: 31px 0;
+    padding-bottom: 1.25rem;
+
+    .header__menu {
+        align-items: center;
+    }
+
+    .header__logo {
+        width: 84px;
+        height: 68px;
+
+        svg {
+            path {
+                fill: $orange-color;
+            }
+        }
+    }
+
+    .header__menu .header__right .header-menu__ul li a {
+        color: $orange-color;
+    }
+
+    .menu-btn span {
+        background-color: $orange-color;
+    }
 }
 
 .active_header {
     background: $orange-color;
     transition: all .3s ease-in-out;
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    padding: 40px 0 60px 0;
+
+    .breadcrumbs__link {
+        color: #999;
+        transition: all 0.2s ease;
+
+        &:hover{
+            color: $default-color;
+        }
+    }
+
+    .separator {
+        display: inline-block;
+        width: 2px;
+        height: 2px;
+        background-color: #999;
+        margin: 0 12px;
+    }
+
+    .breadcrumbs__current{
+        color: $default-color;
+    }
 }
 
 /*Modal Style*/
@@ -425,11 +478,6 @@ span::selection {
     }
 }
 
-.modal-vacancie {
-    .title {
-        padding-bottom: 30px;
-    }
-}
 
 .button_fix {
     position: fixed;
@@ -519,15 +567,6 @@ span::selection {
 
 /* 961 - 1368 px */
 @media screen and (max-width: 1368px) {
-    .title {
-        
-    }
-
-    .fixed,
-    .active_header {
-        padding: 22.06px 0;
-    }
-
     .modal {
         .modal-content {
             max-width: 996px;
@@ -620,9 +659,8 @@ span::selection {
         font-size: 20px;
     }
 
-    .fixed,
-    .active_header {
-        padding: 30px 0;
+    .breadcrumbs {
+        padding: 40px 0;
     }
 
     .modal {
@@ -680,18 +718,6 @@ span::selection {
 
 /* 320 - 480 px */
 @media screen and (max-width: 480px) {
-    .title {
-        font-size: 1.5rem;
-        line-height: 29px;
-        width: 288px;
-        padding-bottom: 30px;
-    }
-
-
-    .fixed,
-    .active_header {
-        padding: 20px 0;
-    }
 
     #ex1 {
         border-radius: 20px;

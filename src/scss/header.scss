@@ -4,29 +4,22 @@
 // $grey-color              : #F7F7F7;
 // $white-color             : #ffffff;
 
-.header {
-  min-height: 720px;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  padding-top: rem(20);
-  z-index: 99;
 
-  .header__bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    bottom: 0;
-    right: 0;
-    overflow: hidden;
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0);
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
+.header {
+  width: 100%;
+  top: 0;
+  padding-top: rem(20);
+  z-index: 10;
+
+  .header__logo {
+    svg {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .header__menu {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -42,12 +35,18 @@
 
         li {
           a {
-            color: $white-color;
+            color: $orange-color;
             font-size: 20px;
             font-weight: 600;
             line-height: 20px;
             letter-spacing: 1px;
             text-transform: uppercase;
+          }
+
+          &:hover {
+            a {
+              text-decoration-line: underline;
+            }
           }
         }
       }
@@ -55,9 +54,260 @@
       .header__social {
         display: flex;
         gap: 20px;
+
+        a {
+          &:hover {
+            svg {
+              circle {
+                fill: $orange-color;
+                stroke: $orange-color;
+              }
+            }
+          }
+        }
+
+        a.facebook {
+          &:hover {
+            svg {
+              path {
+                &:first-child {
+                  fill: $white-color;
+                }
+
+                &:last-child {
+                  fill: $orange-color;
+                }
+              }
+            }
+          }
+        }
+
+        a.youtube {
+          &:hover {
+            svg {
+              path {
+
+                &:first-of-type {
+                  fill: $white-color;
+                }
+
+                &:last-child {
+                  fill: $orange-color;
+                }
+              }
+            }
+          }
+        }
+
+        a.tg,
+        a.phone {
+          &:hover {
+            svg {
+              path {
+                fill: $white-color;
+              }
+            }
+          }
+        }
       }
     }
   }
+}
+
+.header-home {
+  position: absolute;
+
+  .header__logo {
+    svg {
+      path {
+        fill: $white-color;
+      }
+    }
+  }
+
+  .header__menu {
+    .header__right {
+      .header-menu__ul {
+        li a {
+          color: $white-color;
+        }
+      }
+    }
+  }
+
+  .menu-btn span {
+    background-color: $white-color;
+  }
+}
+
+/*Mobile menu*/
+
+.mobile-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: $white-color;
+  transition: 0.5s;
+  transform: translateX(-100%);
+
+  .menu__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    position: relative;
+    z-index: 999;
+  }
+
+  .close {
+    cursor: pointer;
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    z-index: 999;
+  }
+
+  .menu-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .one {
+      ul {
+        li {
+          a {
+            font-size: 32px;
+            text-transform: uppercase;
+          }
+
+          &:hover {
+            a{
+              color: $orange-color;
+              text-decoration: underline;
+            }
+          }
+
+          &:not(:last-child) {
+            padding-bottom: 60px;
+          }
+        }
+      }
+    }
+  }
+
+  .menu__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 40px;
+    padding: 0 12px 24px 12px;
+
+    .social {
+      display: flex;
+      gap: 20px;
+
+      a {
+        svg {
+          circle {
+            fill: $orange-color;
+            stroke: $orange-color;
+          }
+        }
+      }
+
+      a.facebook {
+        svg {
+          path {
+            &:first-child {
+              fill: $white-color;
+            }
+
+            &:last-child {
+              fill: $orange-color;
+            }
+          }
+        }
+      }
+
+      a.youtube {
+        svg {
+          path {
+            &:first-of-type {
+              fill: $white-color;
+            }
+
+            &:last-child {
+              fill: $orange-color;
+            }
+          }
+        }
+      }
+
+      a.tg,
+      a.phone {
+        svg {
+          path {
+            fill: $white-color;
+          }
+        }
+      }
+    }
+
+    .copy {
+      p {
+        &:first-child {
+          padding-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+.mobile-menu_active {
+  transform: translateX(0%);
+}
+
+.menu-btn {
+  display: none;
+  width: 32px;
+  height: 22px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  bottom: 0;
+}
+
+.menu-btn span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: $orange-color;
+  transform: scale(-1, 1);
+
+  &:first-child {
+    transform: translateY(-7px);
+  }
+
+  &:last-child {
+    transform: translateY(3px);
+  }
+
+  &:nth-child(2) {
+    transform: translateY(-2px);
+  }
+
 }
 
 
@@ -70,7 +320,8 @@
   width: 100%;
   height: 100%;
   z-index: 10;
-  background-color: rgba(0, 0, 0, .575);
+  background-color: $white-color;
+  backdrop-filter: blur(7.5px);
 }
 
 .overlay_active {
@@ -87,20 +338,20 @@
 
 @media screen and (max-width: 768px) {
   .header {
-    min-height: 740px;
-
     .header__menu {
 
       .header__logo {
-        img {
-          width: 98px;
-        }
+        width: 98px;
       }
 
       .header__right {
         display: none;
       }
     }
+  }
+
+  .menu-btn {
+    display: block !important;
   }
 }
 
