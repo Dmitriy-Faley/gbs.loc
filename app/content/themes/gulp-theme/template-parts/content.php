@@ -9,8 +9,8 @@
 
 ?>
 
-dasdas
+
+<?php theme_sidebar( 'form' ); ?>
 
 <?php
-get_sidebar();
 get_footer();?>

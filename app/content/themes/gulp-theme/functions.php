@@ -433,3 +433,174 @@ function submenu_get_children_ids( $id, $items ) {
     return $ids;
 }
 
+
+// расчет времени чтения статьи
+if ( ! function_exists( 'gp_read_time' ) ) {
+	function gp_read_time() {
+		$text = get_the_content( '' );
+		$words = str_word_count( strip_tags( $text ), 0, 'абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ' );
+		if ( !empty( $words ) ) {
+			$time_in_minutes = ceil( $words / 200 );
+			return $time_in_minutes;
+		}
+		return false;
+	}
+}
+
+if ( function_exists( 'add_theme_support' ) ) add_theme_support( 'post-thumbnails' );
+
+
+//регистрация портфолио 
+
+add_action( 'init', 'register_keys_post_type' );
+
+// Отфильтруем ЧПУ произвольного типа
+add_filter( 'post_type_link', 'keys_permalink', 1, 2 );
+
+function register_keys_post_type() {
+
+	// Раздел вопроса - keyscat
+	register_taxonomy( 'keyscat', [ 'keys' ], [
+		'label'                 => 'Раздел портфолио', // определяется параметром $labels->name
+		'labels'                => array(
+			'name'              => 'Разделы портфолио',
+			'singular_name'     => 'Раздел портфолио',
+			'search_items'      => 'Искать Раздел портфолио',
+			'all_items'         => 'Все Разделы портфолио',
+			'parent_item'       => 'Родит. раздел портфолио',
+			'parent_item_colon' => 'Родит. раздел портфолио:',
+			'edit_item'         => 'Ред. Раздел портфолио',
+			'update_item'       => 'Обновить Раздел портфолио',
+			'add_new_item'      => 'Добавить Раздел портфолио',
+			'new_item_name'     => 'Новый Раздел портфолио',
+			'menu_name'         => 'Раздел портфолио',
+		),
+		'description'           => 'Рубрики для раздела портфолио', // описание таксономии
+		'public'                => true,
+		'show_in_nav_menus'     => false, // равен аргументу public
+		'show_ui'               => true, // равен аргументу public
+		'show_tagcloud'         => false, // равен аргументу show_ui
+		'hierarchical'          => true,
+		'rewrite'               => array('slug'=>'keys', 'hierarchical'=>false, 'with_front'=>false, 'feed'=>false ),
+		'show_admin_column'     => true, // Позволить или нет авто-создание колонки таксономии в таблице ассоциированного типа записи. (с версии 3.5)
+	] );
+
+	// тип записи - вопросы - keys
+	register_post_type( 'keys', [
+		'labels'             => array(
+			'name'               => 'Портфолио', // Основное название типа записи
+			'singular_name'      => 'Кейс', // отдельное название записи типа Book
+			'add_new'            => 'Добавить новый',
+			'add_new_item'       => 'Добавить новый кейс',
+			'edit_item'          => 'Редактировать кейс',
+			'new_item'           => 'Новый кейс',
+			'view_item'          => 'Посмотреть кейс',
+			'search_items'       => 'Найти кейс',
+			'not_found'          => 'Кейсы не найдены',
+			'not_found_in_trash' => 'В корзине кейсов не найдено',
+			'parent_item_colon'  => '',
+			'menu_name'          => 'Портфолио',
+			'attributes'     	 => 'page-attributes',
+		),
+		'description'         => '',
+		'public'              => true,
+		'publicly_queryable'  => true,
+		'show_ui'             => true,
+		'show_in_rest'        => false,
+		'rest_base'           => '',
+		'show_in_menu'        => true,
+		'exclude_from_search' => false,
+		'capability_type'     => 'post',
+		'map_meta_cap'        => true,
+		'hierarchical'        => true,
+		'rewrite'             => array( 'slug'=>'keys/%keyscat%', 'with_front'=>false, 'pages'=>false, 'feeds'=>false, 'feed'=>false ),
+		'has_archive'         => 'keys',
+		'query_var'           => true,
+		'supports'            => array( 'title', 'editor', 'page-attributes' , 'thumbnail'),
+		'taxonomies'          => array( 'keyscat' ),
+	] );
+
+}
+
+function keys_permalink( $permalink, $post ){
+
+	// выходим если это не наш тип записи: без холдера %keyscat%
+	if( strpos( $permalink, '%keyscat%' ) === false ){
+		return $permalink;
+	}
+
+	// Получаем элементы таксы
+	$terms = get_the_terms( $post, 'keyscat' );
+	// если есть элемент заменим холдер
+	if( ! is_wp_error( $terms ) && !empty( $terms ) && is_object( $terms[0] ) ){
+		$term_slug = array_pop( $terms )->slug;
+	}
+	// элемента нет, а должен быть...
+	else {
+		$term_slug = 'no-keyscat';
+	}
+
+	return str_replace( '%keyscat%', $term_slug, $permalink );
+}
+
+
+//AJAX-подгрузка портфолио
+
+add_action("wp_ajax_load_more__portf", "load_portf");
+add_action("wp_ajax_nopriv_load_more__portf", "load_portf");
+function load_portf()
+{
+    $args = json_decode(stripslashes($_POST["query"]), true);
+    $args["paged"] = $_POST["page"] + 1;
+	$args["posts_per_page"] = 3;
+	$args["post_type"] = 'keys';
+	$args["tax_query"] = array(
+		array(
+			'taxonomy' => 'keyscat',
+			'field'    => 'id',
+			'terms'    => '27'
+		)
+	);
+
+
+    $wpb_all_query = new WP_Query($args);
+    $html = '';
+
+    if ($wpb_all_query->have_posts()) : while ($wpb_all_query->have_posts()) : $wpb_all_query->the_post();
+
+			?>
+			<div class="projects__content__item <?php $post_categories = get_the_category($wpb_all_query->the_post->ID);
+                                   foreach ($post_categories as $post_category) {
+                                      echo ' '. $post_category->slug.' ';
+                                    }; ?>">
+                        <div>
+                            <a href="<?php the_permalink(); ?>" class="item__img">
+                                <?php the_post_thumbnail(); ?>
+                            </a>
+                        </div>
+                        <div class="item__data">
+                            <div class="data__teg">
+                                   <?php $post_categories = get_the_category($wpb_all_query->the_post->ID);
+                                   foreach ($post_categories as $post_category) {
+                                       echo '<span  href="#" data-id="' . intval($post_category->term_id) . '"  data-link="' . get_category_link($post_category->term_id) . '">' . $post_category->name . '</span>';
+                                    }; ?>
+                            </div>
+                            <div class="data__info">
+                                <a href="<?php the_permalink(); ?>" class="title"><?php the_title(); ?></a>
+                                <p class="desk"><?php echo get_the_date()?></p>
+                            </div>
+                        </div>
+                    </div>
+		<?php 
+
+        endwhile;
+    endif;
+
+    wp_reset_postdata();
+    die($html);
+}
+
+add_filter('wp_list_categories', 'add_rel_nofollow_to_wp_list_categories');
+function add_rel_nofollow_to_wp_list_categories($a) {
+	return str_replace('<a ', '<a rel="nofollow" ', $a);
+}

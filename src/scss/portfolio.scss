@@ -1,4 +1,9 @@
 .portfolio {
+
+    .title {
+        width: rem(400);
+    }
+
     .portfolio__tegs {
         display: flex;
         justify-content: space-between;
@@ -7,39 +12,27 @@
     .tegs {
         display: flex;
         flex-wrap: wrap;
-        padding-bottom: 38px;
+        justify-content: flex-end;
+        gap: 24px 40px;
+        width: rem(1000);
 
         a {
+            color: #999;
             font-weight: 500;
-            font-size: 14px;
-            line-height: 20px;
-            text-transform: uppercase;
-            text-align: center;
             transition: all 0.2s ease-in;
-            padding: 12px 14px;
-            background: #FDD0BF;
-            border-radius: 50px;
-            margin-right: 12px;
-            margin-bottom: 12px;
             cursor: pointer;
 
             &:hover {
-                background: #F0B59F;
+                color: $orange-color;
             }
 
             &:active {
-                background: #0E0F11;
-                color: #fff;
-            }
-
-            &:last-child {
-                margin-right: 0;
+                color: $orange-color;
             }
         }
 
         a.active {
-            background: #0E0F11;
-            color: #fff;
+            color: $orange-color;
         }
     }
 
@@ -54,6 +47,7 @@
             width: 48.5%;
 
             .item__name {
+                display: block;
                 font-size: 32px;
                 line-height: 39px;
                 padding: 40px 0;
@@ -62,9 +56,10 @@
 
             .item__tegs {
                 display: flex;
+                flex-wrap: wrap;
                 gap: 40px;
 
-                a {
+                span {
                     color: #999;
                     font-size: 20px;
                     font-weight: 300;
@@ -78,6 +73,94 @@
 
 @media screen and (max-width: 1368px) {}
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+    .portfolio {
 
-@media screen and (max-width: 480px) {}
+        .title,
+        .tegs {
+            width: auto;
+        }
+
+        .portfolio__tegs {
+            flex-direction: column;
+        }
+
+        .tegs {
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        .portfolio__content {
+            padding: 40px 0 60px 0;
+
+            .portfolio__content__item {
+                width: 100%;
+
+                .item__name {
+                    width: auto;
+                    font-size: 24px;
+                    line-height: 28px;
+                    padding: 20px 0;
+                }
+
+                .item__tegs {
+                    gap: 20px;
+
+                    span {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .portfolio {
+        .tegs {
+            gap: 10px;
+        }
+
+        .portfolio__content {
+
+            .portfolio__content__item {
+                .item__tegs {
+                    gap: 10px;
+                }
+            }
+        }
+    }
+}
+
+
+.anima {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+}
+
+.hide {
+    animation-name: hide;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hide {
+    0% {
+        visibility: visible;
+        height: 200px;
+    }
+
+    100% {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+        margin: 0;
+        font-size: 0;
+        margin: 0;
+    }
+}

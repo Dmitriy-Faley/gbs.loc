@@ -13,6 +13,7 @@
 
 @import "contacts";
 @import "portfolio";
+@import "keys";
 
 
 
@@ -202,8 +203,7 @@ span::selection {
     }
 
     @media screen and (max-width: $phoneWidth) {
-        //max-width: 288px;
-        width: 90%;
+        width: 93%;
     }
 }
 
