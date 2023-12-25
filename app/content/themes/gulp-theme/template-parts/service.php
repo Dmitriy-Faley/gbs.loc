@@ -5,58 +5,255 @@
 get_header();
 ?>
 
+<?php if ( function_exists( 'dimox_breadcrumbs' ) ) dimox_breadcrumbs(); ?>
 
-<section class="header-service">
+<section class="service">
     <div class="container">
-        <div class="content">
-            <div class="header-service__info">
-                <h1 class="title"><?php the_title(); ?></h1>
-                <div class="short__description">
-                    <?php the_field('opisanie_v_shapke'); ?>
-                    <a href="#ex1" rel="modal:open" class="button">Заказать</a>
-                </div>
-            </div>
-            <div class="header-service__price">
-                от <?php the_field('czena_v_shapke'); ?>
+        <div class="service__content">
+            <h1 class="title">Service name</h1>
+            <div class="subtext">
+                <?php the_content(); ?>
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/no-image-keys.png" alt="logo">
+                <?php the_content(); ?>
             </div>
         </div>
     </div>
 </section>
 
-<section class="subservices">
+<section class="services services__inner">
     <div class="container">
-        <ul class="subservices__links">
-            <li><a href="#">Создание сайта «под ключ»</a></li>
-            <li><a href="#">Разработка программного модуля для сайта</a></li>
-            <li><a href="#">Готовые сайты</a></li>
-            <li><a href="#">Лицензирование</a></li>
-            <li><a href="#">Технологии</a></li>
-            <li><a href="#">Аутсорсинг</a></li>
-            <li><a href="#">Аутстаффинг</a></li>
-        </ul>
+        <div class="services__title">
+            <h3 class="title">Услуги</h3>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <div class="swiper services__content services__dop">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="services__item">
+                        <p class="title">Public Relations</p>
+                        <div class="text">
+                            <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare
+                                arcu dui.
+                                Pharetra
+                                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec
+                                ullamcorper sit amet.
+                            </p>
+                            <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare
+                                arcu dui.
+                                Pharetra
+                                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec
+                                ullamcorper sit amet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="services__item">
+                        <p class="title">Public Relations</p>
+                        <div class="text">
+                            <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare
+                                arcu dui.
+                                Pharetra
+                                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec
+                                ullamcorper sit amet.
+                            </p>
+                            <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare
+                                arcu dui.
+                                Pharetra
+                                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec
+                                ullamcorper sit amet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="services__item">
+                        <p class="title">Public Relations</p>
+                        <div class="text">
+                            <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare
+                                arcu dui.
+                                Pharetra
+                                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec
+                                ullamcorper sit amet.
+                            </p>
+                            <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare
+                                arcu dui.
+                                Pharetra
+                                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec
+                                ullamcorper sit amet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="services__item">
+                        <p class="title">Public Relations</p>
+                        <div class="text">
+                            <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare
+                                arcu dui.
+                                Pharetra
+                                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec
+                                ullamcorper sit amet.
+                            </p>
+                            <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare
+                                arcu dui.
+                                Pharetra
+                                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec
+                                ullamcorper sit amet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="services__item">
+                        <p class="title">Public Relations</p>
+                        <div class="text">
+                            <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare
+                                arcu dui.
+                                Pharetra
+                                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec
+                                ullamcorper sit amet.
+                            </p>
+                            <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare
+                                arcu dui.
+                                Pharetra
+                                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec
+                                ullamcorper sit amet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scrollbar">
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
     </div>
 </section>
 
-<section class="service-content">
+
+<section class="distribution" id="distribution">
     <div class="container">
-        <h2>Виды сайтов</h2>
-        <p>Наличие web ресурса может также открыть много других возможностей помимо привлечения клиента в свой бизнес.
-            Сайт способен наладить общение с клиентом посредством чата, а также может иметь в себе платежную систему.
-            Однако, для привлечения пользователей и создания обширной клиентской базы, стоит заниматься и продвижением
-            своей интернет площадки. В частных случаях наполнением контентом, SEO продвижением, контекстной рекламой.
-        </p>
-        <p>Важно понимать какие цели преследует веб-площадка. Для чего ее нужно купить, для чего она сделана, какой
-            бизнес она представляет и какой бизнес-план в себе несет. В зависимости от поставленных задач, специфики
-            проекта и желания клиента, компания готова предложить разные типы веб-ресурса. Мы разрабатываем следующие
-            разновидности сайтов:</p>
-        <ul>
-            <li>Сайт из одной страницы (Landing Page) – минимизированный в объеме сайт, который состоит из одной
-                страницы. Задача такого сайта в минимальные сроки и за минимальную цену прорекламировать товар или
-                услугу.</li>
-            <li>Сайт из одной страницы (Landing Page) – минимизированный в объеме сайт, который состоит из одной
-                страницы. Задача такого сайта в минимальные сроки и за минимальную цену прорекламировать товар или
-                услугу.</li>
-        </ul>
+        <h3 class="title">Общие вопросы</h3>
+        <div class="distribution__content--info">
+            <ul class="accordion">
+                <li>
+                    <a class="toggle" href="javascript:void(0);">
+                        Нет напряжения в сети (починим 30 BYN) </a>
+                    <ul class="inner">
+                        <li>Замена платы / Ремонт блока питания</li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="toggle" href="javascript:void(0);">
+                        Нет изображения на экране (починим от 60 BYN) </a>
+                    <ul class="inner">
+                        <li>Замена платы / Ремонт блока питания</li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="toggle" href="javascript:void(0);">
+                        Нет звука (починим от 30 BYN)</a>
+                    <ul class="inner">
+                        <li>Замена платы / Ремонт блока питания</li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="toggle" href="javascript:void(0);">
+                        Есть звук, нет картинки (починим от 35 BYN)</a>
+                    <ul class="inner">
+                        <li>Замена платы / Ремонт блока питания. Замена платы / Ремонт блока питания</li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="toggle" href="javascript:void(0);">
+                        Нет напряжения в сети (починим 30 BYN) </a>
+                    <ul class="inner">
+                        <li>Замена платы / Ремонт блока питания</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section class="aboutus">
+    <div class="aboutus__bg"></div>
+    <div class="container">
+        <div class="aboutus__desk">
+            <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo.svg" alt="logo">
+            <h3 class="title">Aliquet nibh praesent tristique magna sit amet purus. Ultricies mi quis hendrerit</h3>
+            <p class="subtitle">Eu ultrices vitae auctor eu augue ut lectus arcu. Bibendum ut tristique et egestas quis.
+                Urna
+                duis convallis convallis tellus id. Elit pellentesque habitant morbi tristique senectus.</p>
+        </div>
+    </div>
+</section>
+
+<section class="projects" id="projects">
+    <div class="projects__title container">
+        <h3 class="title">Наши работы</h3>
+        <a href="#" class="button">Все наши кейсы <img
+                src="<?php echo get_template_directory_uri() ?>/assets/img/icons/arrow-btn.svg" alt="btn"></a>
+    </div>
+    <div class="projects__content swiper projects__slider">
+        <div class="swiper-wrapper container">
+            <div class="swiper-slide">
+                <div class="projects__content__item">
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/project11.png"
+                        alt="project">
+                    <div class="item__content">
+                        <p class="project__title">Paritetbank</p>
+                        <p class="project__desk">PR-мероприятия</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="projects__content__item">
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/project2.png"
+                        alt="project">
+                    <div class="item__content">
+                        <p class="project__title">Paritetbank</p>
+                        <p class="project__desk">PR-мероприятия</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="projects__content__item">
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/project3.png"
+                        alt="project">
+                    <div class="item__content">
+                        <p class="project__title">Paritetbank</p>
+                        <p class="project__desk">PR-мероприятия</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="projects__content__item">
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/project3.png"
+                        alt="project">
+                    <div class="item__content">
+                        <p class="project__title">Paritetbank</p>
+                        <p class="project__desk">PR-мероприятия</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="projects__content__item">
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/project3.png"
+                        alt="project">
+                    <div class="item__content">
+                        <p class="project__title">Paritetbank</p>
+                        <p class="project__desk">PR-мероприятия</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scrollbar container">
+            <div class="swiper-scrollbar"></div>
+        </div>
     </div>
 </section>
 
@@ -64,3 +261,40 @@ get_header();
 <?php theme_sidebar( 'form' ); ?>
 
 <?php get_footer(); ?>
+
+
+<script>
+    var swiper = new Swiper(".services__dop", {
+        slidesPerView: 2,
+        spaceBetween: 40,
+
+        breakpoints: {
+            // when window width is >= 320px
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 15
+            },
+            // when window width is >= 480px
+            480: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            },
+            // when window width is >= 640px
+            769: {
+                slidesPerView: 2,
+                spaceBetween: 40
+            }
+        },
+
+        scrollbar: {
+            el: ".swiper-scrollbar",
+            hide: true,
+        },
+
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+
+    });
+</script>

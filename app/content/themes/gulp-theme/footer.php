@@ -156,7 +156,7 @@
       }
     });
 
-    var swiper = new Swiper(".services__content", {
+    var swiper = new Swiper(".services__slider", {
       slidesPerView: 3,
       spaceBetween: 40,
 

@@ -106,7 +106,7 @@ get_header();
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
     </div>
-    <div class="swiper services__content">
+    <div class="swiper services__content services__slider">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="services__item">

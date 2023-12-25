@@ -53,27 +53,30 @@ get_header();
                     <p><?php the_field('chto_prodvigaem'); ?></p>
                 </div>
             </div>
+            
+            <?php if( have_rows('fotogalereya') ): ?>
             <div class="keys__gallery">
                 <div class="swiper gallery__keys">
                     <div class="swiper-wrapper">
+                    
+                    <?php while( have_rows('fotogalereya') ): the_row(); 
+                        // переменные
+                        $foto = get_sub_field('foto');
+                    ?>
+
                         <div class="swiper-slide">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/photo1.png"
-                                alt="gallery">
+                            <img src="<?php echo $foto['url']; ?>" alt="<?php echo $foto['alt']; ?>">
                         </div>
-                        <div class="swiper-slide">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/photo1.png"
-                                alt="gallery">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/photo1.png"
-                                alt="gallery">
-                        </div>
+                    <?php endwhile; ?>
+
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
+            <?php endif; ?>
+
             <div class="keys__text">
                 <div class="about-keys">
                     <h2>Идея:</h2>
@@ -82,7 +85,7 @@ get_header();
             </div>
             <div class="keys__text">
                 <div class="about-keys">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/no-image-keys.png" alt="portfolio">
+                    <!-- <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/no-image-keys.png" alt="portfolio"> -->
                     <?php the_field('kartinka'); ?>
                 </div>
             </div>
@@ -98,14 +101,23 @@ get_header();
                     <p><?php the_field('rezultat'); ?></p>
                 </div>
             </div>
+
+            <?php if( have_rows('dopolnitelnye_izobrazheniya') ): ?>
             <div class="keys__photo">
+
+                <?php while( have_rows('dopolnitelnye_izobrazheniya') ): the_row(); 
+                    // переменные
+                    $dopPhoto = get_sub_field('dop_foto');
+                ?>
+                
                 <div class="photo__image">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/photo1.png" alt="portfolio">
+                    <img src="<?php echo $dopPhoto['url']; ?>" alt="<?php echo $dopPhoto['alt']; ?>">
                 </div>
-                <div class="photo__image">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/photo1.png" alt="portfolio">
-                </div>
+
+                <?php endwhile; ?>
+                
             </div>
+            <?php endif; ?>
 
             <div class="keys__link">
 
@@ -132,7 +144,7 @@ get_header();
                 <?php 
                     if ($next) { ?>
                     <div class="next">
-                        <div>`
+                        <div>
                             <p>Следующий кейс:</p>
                             <?php echo '<a class="link" href="' . get_permalink( $next ) . '">' . $next->post_title .'</a>'; ?>
                         </div>
