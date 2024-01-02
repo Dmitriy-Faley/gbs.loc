@@ -63,6 +63,7 @@ if( function_exists('acf_set_options_page_title') ) {
 add_action('after_setup_theme', function () {
 	register_nav_menus([
 		'button_menu' => 'button_menu',
+		'footer_menu' => 'footer_menu',
 	]);
 });
 

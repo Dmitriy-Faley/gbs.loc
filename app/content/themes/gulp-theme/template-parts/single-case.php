@@ -18,41 +18,49 @@ get_header();
             <div class="keys__tags">
                 <?php $post_categories = get_the_terms(get_the_ID(), "keyscat");
                     foreach ($post_categories as $post_category) {
-                        echo '<span  href="#" data-id="' . intval($post_category->term_id) . '">' . '#' . $post_category->name . '</span>';
+                        echo '<span data-id="' . intval($post_category->term_id) . '">' . '#' . $post_category->name . '</span>';
                     };
                 ?>
-                <span>dsadasdas</span>
             </div>
         </div>
         <div class="keys__content">
+        <?php 
+            if (has_post_thumbnail()) { ?>
             <div class="keys__foto">
-                <?php 
-                    if (has_post_thumbnail()) {
-                        the_post_thumbnail();
-                    } else { ?>
+                <?php the_post_thumbnail(); ?>
+            </div>
+            <?php } else {  ?>
                 <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/no-image-keys.png"
                     alt="portfolio">
-                <?php }
-                ?>
-            </div>
+            <?php  }
+            ?>
+
+            <?php if( get_field('klient') ) { ?>
             <div class="keys__text">
                 <div class="about-keys">
                     <h2>Клиент:</h2>
                     <p><?php the_field('klient'); ?></p>
                 </div>
             </div>
+            <?php } ?>
+
+            <?php if( get_field('zadacha') ) { ?>
             <div class="keys__text">
                 <div class="about-keys">
                     <h2>Задача:</h2>
                     <p><?php the_field('zadacha'); ?></p>
                 </div>
             </div>
+            <?php } ?>
+
+            <?php if( get_field('chto_prodvigaem') ) { ?>
             <div class="keys__text">
                 <div class="about-keys">
                     <h2>Что продвигаем:</h2>
                     <p><?php the_field('chto_prodvigaem'); ?></p>
                 </div>
             </div>
+            <?php } ?>
             
             <?php if( have_rows('fotogalereya') ): ?>
             <div class="keys__gallery">
@@ -77,30 +85,41 @@ get_header();
             </div>
             <?php endif; ?>
 
-            <div class="keys__text">
-                <div class="about-keys">
-                    <h2>Идея:</h2>
-                    <p><?php the_field('ideya'); ?></p>
+            <?php if ( get_field('ideya') ) { ?>
+                <div class="keys__text">
+                    <div class="about-keys">
+                        <h2>Идея:</h2>
+                        <p><?php the_field('ideya'); ?></p>
+                    </div>
                 </div>
-            </div>
+            <?php } ?>
+            
+
+            <?php if ( get_field('kartinka') ) { ?>
             <div class="keys__text">
                 <div class="about-keys">
-                    <!-- <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/no-image-keys.png" alt="portfolio"> -->
                     <?php the_field('kartinka'); ?>
                 </div>
             </div>
+            <?php } ?>
+
+            <?php if ( get_field('realizacziya') ) { ?>
             <div class="keys__text">
                 <div class="about-keys">
                     <h2>Реализация:</h2>
                     <p><?php the_field('realizacziya'); ?></p>
                 </div>
             </div>
+            <?php } ?>
+
+            <?php if ( get_field('rezultat') ) { ?>
             <div class="keys__text">
                 <div class="about-keys">
-                    <h2>Результат::</h2>
+                    <h2>Результат:</h2>
                     <p><?php the_field('rezultat'); ?></p>
                 </div>
             </div>
+            <?php } ?>
 
             <?php if( have_rows('dopolnitelnye_izobrazheniya') ): ?>
             <div class="keys__photo">

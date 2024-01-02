@@ -15,8 +15,9 @@
             }
         }
 
-        img {
+        img.wp-post-image {
             margin: 60px 0;
+            width: 100%;
         }
     }
 }
@@ -24,6 +25,7 @@
 .services__inner {
     width: 1114px;
     margin: 0 auto;
+    padding: 0 0 100px 0;
     background: $white-color;
 
     .swiper-button-prev {
@@ -40,17 +42,16 @@
 }
 
 .distribution {
-    padding-top: 3.8rem;
-    padding-bottom: 110px;
+    padding-bottom: 100px;
     overflow: hidden;
     width: 1114px;
     margin: 0 auto;
 
     .title {
+        padding-bottom: 40px;
     }
 
-    .distribution__content--info {
-    }
+    .distribution__content--info {}
 
     ul {
         list-style: none;
@@ -59,32 +60,28 @@
         .inner {
             overflow: hidden;
             display: none;
-            padding: 0 0 16px 27px;
+            padding: 0 40px 40px 40px;
 
-            li {
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 22px;
-                color: #090230;
-                opacity: 0.9;
-                border: none;
-            }
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+            color: #090230;
+            opacity: 0.9;
+            border: none;
         }
 
         li {
-            background: #FFFFFF;
+            background: #F7F7F7;
             border: 1px solid rgba(109, 133, 255, 0.2);
-            border-radius: 10px;
+            border-radius: 20px;
             margin-bottom: 20px;
 
             a.toggle {
-                font-size: 22px;
-                font-weight: 500;
-                line-height: 27px;
-                color: #090230;
+                font-size: 32px;
+                line-height: 32px;
                 width: 100%;
                 display: block;
-                padding: 30px 23px 30px 27px;
+                padding: 40px;
                 transition: all 0.3s ease;
 
                 &::before {
@@ -93,22 +90,21 @@
                     font-size: 40px;
                     vertical-align: bottom;
                     float: right;
-                    width: 25px;
-                    height: 25px;
+                    width: 38px;
+                    height: 38px;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     transform: rotate(0deg);
                     transition: transform .2s;
-                    color: #090230;
+                    color: $white-color;
+                    background: $orange-color;
                 }
 
                 &:hover {
-                    color: #6D85FF;
-
                     &::before {
-                        color: #6D85FF;
+                        background: #F66D4D;
                     }
                 }
             }
@@ -116,6 +112,68 @@
             a.toggle.active::before {
                 content: '-';
                 transform: rotate(-180deg);
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .service{
+        .service__content{
+            width: 100%;
+            padding-bottom: 60px;
+        }
+    }
+
+    .services__inner{
+        width: 100%;
+        padding-bottom: 60px;
+    }
+
+    .distribution{
+        width: 100%;
+        padding-bottom: 60px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .service{
+        .title{
+            padding-bottom: 20px;
+        }
+        .service__content{
+            p{
+                font-size: 14px;
+                line-height: 19.6px;
+            }
+        }
+    }
+
+    .services__inner{
+        .services__dop{
+            .services__item{
+                padding: 40px 24px;
+
+                .title{
+                    padding-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    .distribution{
+        ul{
+            .inner{
+                padding: 0 24px 40px 24px;
+            }
+            li{
+                a.toggle{
+                    padding: 40px 24px 20px 24px;
+                    font-size: 24px;
+                    line-height: 24px;
+                }
             }
         }
     }

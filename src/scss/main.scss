@@ -283,6 +283,7 @@ span::selection {
 .breadcrumbs {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     padding: 40px 0 60px 0;
 
     .breadcrumbs__link {

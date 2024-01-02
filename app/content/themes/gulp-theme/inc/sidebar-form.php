@@ -26,14 +26,14 @@
           <a href="#">скачать портфолио</a>
         </div>
       </div>
-      <form method="post" class="form">
+      <!-- <form method="post" class="form">
         <label for="name">Ваше имя</label>
         <input type="text" name="name" placeholder="Имя" required minlength="2" />
         <label for="phone">Номер телефона</label>
         <input type="tel" name="phone" placeholder="+375 (--) --- -- --" required />
         <button class="button">Отправить</button>
-      </form>
-      <?php //echo do_shortcode('[contact-form-7 id="18" title="Связаться с нами"]'); ?>
+      </form> -->
+      <?php echo do_shortcode('[contact-form-7 id="18" title="Форма в футере"]'); ?>
     </div>
   </div>
 </section>

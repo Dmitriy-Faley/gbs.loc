@@ -97,14 +97,14 @@
             }
         }
 
-        .keys__photo{
+        .keys__photo {
             width: 1114px;
             display: flex;
             justify-content: space-between;
             gap: 40px;
             margin: 0 auto 100px;
 
-            .photo__image{
+            .photo__image {
                 background: #F7F7F7;
                 width: 537px;
                 display: flex;
@@ -114,7 +114,7 @@
             }
         }
 
-        .keys__link{
+        .keys__link {
             display: flex;
             justify-content: space-between;
             width: 1114px;
@@ -122,38 +122,103 @@
             position: relative;
 
             .prev,
-            .next{
+            .next {
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
                 width: 547px;
 
-                .arrow{
+                .arrow {
                     position: absolute;
                 }
 
-                p{
+                p {
                     font-size: 24px;
                     line-height: 24px;
                     padding-bottom: 40px;
                 }
 
-                a.link{
+                a.link {
                     font-size: 32px;
                     line-height: 32px;
                     color: $orange-color;
                 }
             }
 
-            .prev{
-                .arrow{
+            .prev {
+                .arrow {
                     left: -90px;
                 }
             }
 
-            .next{
-                .arrow{
+            .next {
+                .arrow {
                     right: -90px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .keys {
+        .keys__header {
+            flex-direction: column;
+
+            .keys__info {
+                width: auto;
+                padding-bottom: 40px;
+
+                .title {
+                    padding-bottom: 20px;
+                }
+            }
+        }
+
+        .keys__content{
+            >div{
+                margin-bottom: 40px;
+            }
+
+            .about-keys{
+                flex-direction: column;
+                width: 100%;
+
+                h2{
+                    padding-bottom: 20px;
+                }
+
+                p{
+                    width: 100%;
+                }
+            }
+
+            .keys__gallery{
+                width: 100%;
+
+                .swiper-button-next,
+                .swiper-button-prev{
+                    display: none;
+                }
+            }
+
+            .keys__link{
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 40px;
+
+                .prev,
+                .next{
+                    width: auto;
+
+                    p{
+                        padding-bottom: 20px;
+                    }
+
+                    .arrow{
+                        display: none;
+                    }
                 }
             }
         }

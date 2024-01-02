@@ -29,56 +29,59 @@ get_header();
 <section class="projects" id="projects">
   <div class="projects__title container">
     <h3 class="title">Наши последние проекты</h3>
-    <a href="#" class="button">Все наши кейсы <img
+    <a href="<?php echo get_page_link( 47 ); ?>" class="button">Все наши кейсы <img
         src="<?php echo get_template_directory_uri() ?>/assets/img/icons/arrow-btn.svg" alt="btn"></a>
   </div>
   <div class="projects__content swiper projects__slider">
     <div class="swiper-wrapper container">
+        <?php
+          // запрос
+          $wpb_all_query = new WP_Query(array(
+              'tax_query' => array(
+                  array(
+                      'taxonomy' => 'keyscat',
+                      'field'    => 'id',
+                      'terms'    => '6'
+                  )
+              ),
+              'post_type'=>'keys', 
+              'post_status'=>'publish', 
+              'posts_per_page'=>10
+      )); ?>
+
+      <?php if ( $wpb_all_query->have_posts() ) : ?>
+      <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
+
       <div class="swiper-slide">
-        <div class="projects__content__item">
-          <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/project11.png" alt="project">
+        <a href="<?php the_permalink(); ?>" class="projects__content__item">
+          <?php 
+              if (has_post_thumbnail()) {
+                  the_post_thumbnail();
+              } else { ?>
+                  <img class="project__image" src="<?php echo get_template_directory_uri() ?>/assets/img/projects/no-image.png"
+                  alt="portfolio">
+              <?php }
+          ?>
           <div class="item__content">
-            <p class="project__title">Paritetbank</p>
-            <p class="project__desk">PR-мероприятия</p>
+            <div>
+              <p class="project__title"><?php the_title(); ?></p>
+              <p class="project__desk">
+                <?php $post_categories = get_the_terms(get_the_ID(), "keyscat");
+                    foreach ($post_categories as $post_category) {
+                      echo ' '. $post_category->name.' ';
+                    }; ?>
+              </p>
+            </div>
+            <img class="arrow-more" src="<?php echo get_template_directory_uri() ?>/assets/img/icons/arrow-project.svg" alt="arrow-project">
           </div>
-        </div>
+        </a>
       </div>
-      <div class="swiper-slide">
-        <div class="projects__content__item">
-          <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/project2.png" alt="project">
-          <div class="item__content">
-            <p class="project__title">Paritetbank</p>
-            <p class="project__desk">PR-мероприятия</p>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="projects__content__item">
-          <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/project3.png" alt="project">
-          <div class="item__content">
-            <p class="project__title">Paritetbank</p>
-            <p class="project__desk">PR-мероприятия</p>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="projects__content__item">
-          <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/project3.png" alt="project">
-          <div class="item__content">
-            <p class="project__title">Paritetbank</p>
-            <p class="project__desk">PR-мероприятия</p>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="projects__content__item">
-          <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/project3.png" alt="project">
-          <div class="item__content">
-            <p class="project__title">Paritetbank</p>
-            <p class="project__desk">PR-мероприятия</p>
-          </div>
-        </div>
-      </div>
+
+      <?php endwhile; ?>
+
+      <?php wp_reset_postdata(); ?>
+      <?php endif; ?>
+      
     </div>
     <div class="scrollbar container">
       <div class="swiper-scrollbar"></div>
@@ -107,97 +110,42 @@ get_header();
       <div class="swiper-button-prev"></div>
     </div>
     <div class="swiper services__content services__slider">
+        <?php
+          // запрос
+          $wpb_all_query = get_pages( [
+            'sort_order'   => 'ASC',
+            'sort_column'  => 'post_title',
+            'hierarchical' => 0,
+            'exclude'      => '',
+            'include'      => '',
+            'meta_value'   => 1,
+            'authors'      => '',
+            'exclude_tree' => '',
+            'number'       => '',
+            'offset'       => 0,
+            'post_type'    => 'page',
+            'posts_per_page'  => 10,
+            'post_status'  => 'publish',
+          ] ); ?>
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="services__item">
-            <p class="title">Public Relations</p>
-            <div class="text">
-              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui.
-                Pharetra
-                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.
-              </p>
-              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui.
-                Pharetra
-                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.
-              </p>
-            </div>
-            <div class="button-more">Узнать больше
-              <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/btn-more.svg" alt="btn-more">
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="services__item">
-            <p class="title">Public Relations</p>
-            <div class="text">
-              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui.
-                Pharetra
-                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.
-              </p>
-              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui.
-                Pharetra
-                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.
-              </p>
-            </div>
-            <div class="button-more">Узнать больше
-              <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/btn-more.svg" alt="btn-more">
+        <?php foreach( $wpb_all_query as $post ){ ?>
+          <div class="swiper-slide">
+            <div class="services__item">
+              <p class="title"><?php the_title(); ?></p>
+              <div class="text">
+                <?php 
+                  if (get_field('opisanie_na_glavnoj')) {
+                    the_field('opisanie_na_glavnoj'); ?>...
+                  <?php }
+                ?>
+              </div>
+              <a href="<?php echo the_permalink() ; ?>" class="button-more">Узнать больше
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/btn-more.svg" alt="btn-more">
+              </a>
             </div>
           </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="services__item">
-            <p class="title">Public Relations</p>
-            <div class="text">
-              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui.
-                Pharetra
-                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.
-              </p>
-              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui.
-                Pharetra
-                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.
-              </p>
-            </div>
-            <div class="button-more">Узнать больше
-              <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/btn-more.svg" alt="btn-more">
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="services__item">
-            <p class="title">Public Relations</p>
-            <div class="text">
-              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui.
-                Pharetra
-                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.
-              </p>
-              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui.
-                Pharetra
-                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.
-              </p>
-            </div>
-            <div class="button-more">Узнать больше
-              <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/btn-more.svg" alt="btn-more">
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="services__item">
-            <p class="title">Public Relations</p>
-            <div class="text">
-              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui.
-                Pharetra
-                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.
-              </p>
-              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui.
-                Pharetra
-                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.
-              </p>
-            </div>
-            <div class="button-more">Узнать больше
-              <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/btn-more.svg" alt="btn-more">
-            </div>
-          </div>
-        </div>
+          <?php } ?>
+          <?php wp_reset_postdata(); ?>
       </div>
       <div class="scrollbar">
         <div class="swiper-scrollbar"></div>
@@ -275,6 +223,7 @@ get_header();
 <?php endif; ?>
 
 
+<?php if( have_rows('fotogalereya') ): ?>
 <section class="gallery">
   <div class="container">
     <h3 class="title">GBS коммуникационная компания</h3>
@@ -283,34 +232,25 @@ get_header();
   </div>
   <div class="gallery__content swiper gallery__slider">
     <div class="swiper-wrapper container">
+      <?php while( have_rows('fotogalereya') ): the_row(); 
+          // переменные
+          $image = get_sub_field('izobrazhenie');
+      ?>
       <div class="swiper-slide">
         <div class="gallery__content__item">
-          <img src="<?php echo get_template_directory_uri() ?>/assets/img/gallery1.png" alt="gallery1">
+          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
         </div>
       </div>
-      <div class="swiper-slide">
-        <div class="gallery__content__item">
-          <img src="<?php echo get_template_directory_uri() ?>/assets/img/gallery1.png" alt="gallery1">
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="gallery__content__item">
-          <img src="<?php echo get_template_directory_uri() ?>/assets/img/gallery1.png" alt="gallery1">
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="gallery__content__item">
-          <img src="<?php echo get_template_directory_uri() ?>/assets/img/gallery1.png" alt="gallery1">
-        </div>
-      </div>
+      <?php endwhile; ?>
     </div>
     <div class="scrollbar container">
       <div class="swiper-scrollbar"></div>
     </div>
   </div>
 </section>
+<?php endif; ?>
 
-
+<?php if( have_rows('otzyvy') ): ?>
 <section class="reviews">
   <div class="container">
     <div class="reviews__title">
@@ -320,120 +260,34 @@ get_header();
     </div>
     <div class="swiper reviews__content">
       <div class="swiper-wrapper">
+
+      <?php while( have_rows('otzyvy') ): the_row(); 
+          // переменные
+          $iconRev = get_sub_field('ikonka_klienta');
+          $titleRev = get_sub_field('zagolovok_otzyva');
+          $textRev = get_sub_field('tekst_otzyva');
+          $imgRev = get_sub_field('izobrazhenie_klienta');
+          $nameRev = get_sub_field('imya_klienta');
+          $jobRev = get_sub_field('dolzhnost_klienta');
+      ?>
+
         <div class="swiper-slide">
           <div class="reviews__item">
-            <img class="reviews__logo" src="<?php echo get_template_directory_uri() ?>/assets/img/clients/paritbank.svg"
-              alt="">
-            <p class="title">Exceptional web design that exceeded our expectations</p>
+            <img class="reviews__logo" src="<?php echo $iconRev['url']; ?>" alt="<?php echo $iconRev['alt']; ?>">
+            <p class="title"><?php echo $titleRev; ?></p>
             <div class="text">
-              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui.
-                Pharetra
-                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.
-              </p>
-              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui.
-                Pharetra
-                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.
-              </p>
+              <?php echo $textRev; ?>
             </div>
             <div class="founder">
-              <img src="<?php echo get_template_directory_uri() ?>/assets/img/founder.svg" alt="founder">
+              <img src="<?php echo $imgRev['url']; ?>" alt="<?php echo $imgRev['url']; ?>">
               <div class="founder__info">
-                <p class="founder__info--name">John Doe</p>
-                <p class="founder__info--job">Основатель компании “Название”</p>
+                <p class="founder__info--name"><?php echo $nameRev; ?></p>
+                <p class="founder__info--job"><?php echo $jobRev; ?></p>
               </div>
             </div>
           </div>
         </div>
-        <div class="swiper-slide">
-          <div class="reviews__item">
-            <img class="reviews__logo" src="<?php echo get_template_directory_uri() ?>/assets/img/clients/unicef.svg"
-              alt="">
-            <p class="title">Public Relations</p>
-            <div class="text">
-              <p>Our website redesign surpassed our expectations. Aiko's attention to detail and creativity resulted in
-                a visually stunning and user-friendly site that immediately boosted our online presence.</p>
-            </div>
-            <div class="founder">
-              <img src="<?php echo get_template_directory_uri() ?>/assets/img/founder.svg" alt="founder">
-              <div class="founder__info">
-                <p class="founder__info--name">John Doe</p>
-                <p class="founder__info--job">Основатель компании “Название”</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="reviews__item">
-            <img class="reviews__logo" src="<?php echo get_template_directory_uri() ?>/assets/img/clients/paritbank.svg"
-              alt="">
-            <p class="title">Public Relations</p>
-            <div class="text">
-              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui.
-                Pharetra
-                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.
-              </p>
-              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui.
-                Pharetra
-                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.
-              </p>
-            </div>
-            <div class="founder">
-              <img src="<?php echo get_template_directory_uri() ?>/assets/img/founder.svg" alt="founder">
-              <div class="founder__info">
-                <p class="founder__info--name">John Doe</p>
-                <p class="founder__info--job">Основатель компании “Название”</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="reviews__item">
-            <img class="reviews__logo" src="<?php echo get_template_directory_uri() ?>/assets/img/clients/paritbank.svg"
-              alt="">
-            <p class="title">Public Relations</p>
-            <div class="text">
-              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui.
-                Pharetra
-                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.
-              </p>
-              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui.
-                Pharetra
-                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.
-              </p>
-            </div>
-            <div class="founder">
-              <img src="<?php echo get_template_directory_uri() ?>/assets/img/founder.svg" alt="founder">
-              <div class="founder__info">
-                <p class="founder__info--name">John Doe</p>
-                <p class="founder__info--job">Основатель компании “Название”</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="reviews__item">
-            <img class="reviews__logo" src="<?php echo get_template_directory_uri() ?>/assets/img/clients/paritbank.svg"
-              alt="">
-            <p class="title">Public Relations</p>
-            <div class="text">
-              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui.
-                Pharetra
-                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.
-              </p>
-              <p>Turpis massa sed elementum tempus egestas. Sed blandit libero volutpat sed cras ornare arcu dui.
-                Pharetra
-                pharetra massa massa ultricies mi quis hendrerit dolor magna. Vitae aliquet nec ullamcorper sit amet.
-              </p>
-            </div>
-            <div class="founder">
-              <img src="<?php echo get_template_directory_uri() ?>/assets/img/founder.svg" alt="founder">
-              <div class="founder__info">
-                <p class="founder__info--name">John Doe</p>
-                <p class="founder__info--job">Основатель компании “Название”</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <?php endwhile; ?>
       </div>
       <div class="scrollbar container">
         <div class="swiper-scrollbar"></div>
@@ -441,6 +295,7 @@ get_header();
     </div>
   </div>
 </section>
+<?php endif; ?>
 
 
 <?php theme_sidebar( 'form' ); ?>

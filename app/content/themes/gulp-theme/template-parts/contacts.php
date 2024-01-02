@@ -16,7 +16,7 @@ get_header();
           <br><br>
           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
-
+<!-- 
         <form method="post" class="form">
           <div class="name">
             <div class="form__item">
@@ -43,7 +43,7 @@ get_header();
           </div>
           <div class="form__item">
             <label for="budget">Выберите услугу</label>
-            <select name="budget" id="budget">
+            <select name="serv" id="serv">
               <option value="Менее 2500р">SMM</option>
               <option value="Менее 2500р">Site</option>
               <option value="Менее 2500р">target</option>
@@ -64,11 +64,13 @@ get_header();
           </div>
           <button class="button">Отправить</button>
         </form>
+ -->
+        <?php echo do_shortcode('[contact-form-7 id="141" title="Форма в контактах"]'); ?>
 
       </div>
       <div class="map">
         <iframe
-          src="https://yandex.ru/map-widget/v1/?um=constructor%3A9abab96e5f5657bb72d43433259f4c56b99a8a0570a003972c68bb4562dc45fc&amp;source=constructor"
+          src="<?php the_field('ssylka_na_yandeks_kartu', 'option') ?>"
           width="100%" height="100%" frameborder="0"></iframe>
       </div>
     </div>
@@ -82,7 +84,7 @@ get_header();
 <script>
   //Прикрепить резюме
   $(document).ready(function () {
-        $('input[name="file-137"]').change(function (e) {
+        $('input[name="file-422"]').change(function (e) {
             var fileName = e.target.files[0].name;
             $('.file_pretext').text(fileName);
         });

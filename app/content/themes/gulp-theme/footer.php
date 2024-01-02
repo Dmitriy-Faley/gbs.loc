@@ -11,29 +11,35 @@
             <p>Наши контакты</p>
             <ul>
               <li>
-                <a href="mailto:hello@gbs.com">hello@gbs.com</a>
+                <a href="mailto:<?php the_field('pochta', 'option') ?>"><?php the_field('pochta', 'option') ?></a>
               </li>
               <li>
-                <a href="tel:+375 44 774 00 49">+375 44 774 00 49</a>
+                <a href="tel:<?php the_field('telefon', 'option') ?>"><?php the_field('telefon', 'option') ?></a>
               </li>
             </ul>
           </div>
           <div class="footer__menu--list">
             <p>О нас</p>
-            <ul>
-              <li>
-                <a href="#">Главная</a>
-              </li>
-              <li>
-                <a href="#">Главная</a>
-              </li>
-              <li>
-                <a href="#">Главная</a>
-              </li>
-              <li>
-                <a href="#">Главная</a>
-              </li>
-            </ul>
+            <?php
+              wp_nav_menu( [
+              'menu'            => '', 
+              'container'       => false, 
+              'container_class' => '', 
+              'container_id'    => '',
+              'menu_class'      => '', 
+              'menu_id'         => '',
+              'echo'            => true,
+              'theme_location'  => 'footer_menu',
+              'fallback_cb'     => 'wp_page_menu',
+              'before'          => '',
+              'after'           => '',
+              'link_before'     => '',
+              'link_after'      => '',
+              'items_wrap'      => '<ul id="%1$s">%3$s</ul>',
+              'depth'           => 0,
+              'walker'          => '',
+              ] );
+            ?>
           </div>
           <div class="footer__menu--list">
             <p>Соцсети</p>
@@ -45,18 +51,18 @@
                 <a href="#">Youtube</a>
               </li>
               <li>
-                <a href="#">Главная</a>
+                <a href="#">Facebook</a>
               </li>
               <li>
-                <a href="#">Главная</a>
+                <a href="#">LinkedIn</a>
               </li>
             </ul>
           </div>
         </div>
     </div>
     <div class="footer__bottom">
-      <div>© 2014 - 2023 GBS</div>
-      <div>ул. Красная 13, офис 24, 220005, Минск, Беларусь</div>
+      <div><?php the_field('copyright', 'option') ?></div>
+      <div><?php the_field('adres', 'option') ?></div>
     </div>
   </div>
 </footer>

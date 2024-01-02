@@ -46,6 +46,12 @@
         .portfolio__content__item {
             width: 48.5%;
 
+            img.wp-post-image {
+                //width: 820px;
+                //height: 540px;
+                width: 100%;
+            }
+
             .item__name {
                 display: block;
                 font-size: 32px;

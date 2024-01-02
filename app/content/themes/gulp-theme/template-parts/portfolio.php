@@ -44,8 +44,6 @@ get_header();
                                    foreach ($post_categories as $post_category) {
                                       echo ' '. $post_category->slug.' ';
                                     }; ?>">
-                    <!-- <img src="<?php echo get_template_directory_uri() ?>/assets/img/projects/portfolio1.png"
-                        alt="portfolio"> -->
                     <?php 
                     if (has_post_thumbnail()) {
                         the_post_thumbnail();
