@@ -54,14 +54,19 @@ get_header();
 
       <div class="swiper-slide">
         <a href="<?php the_permalink(); ?>" class="projects__content__item">
-          <?php 
-              if (has_post_thumbnail()) {
-                  the_post_thumbnail();
-              } else { ?>
-                  <img class="project__image" src="<?php echo get_template_directory_uri() ?>/assets/img/projects/no-image.png"
-                  alt="portfolio">
-              <?php }
-          ?>
+
+        <?php 
+          $image = get_field('img_home');
+
+          if( !empty($image) ){ ?>
+
+            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+          
+          <?php } else{ ?>
+            <img class="project__image" src="<?php echo get_template_directory_uri() ?>/assets/img/projects/no-image.png"
+            alt="portfolio">
+          <?php } ?>
+
           <div class="item__content">
             <div>
               <p class="project__title"><?php the_title(); ?></p>

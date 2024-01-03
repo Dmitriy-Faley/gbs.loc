@@ -1,0 +1,107 @@
+.about {
+    img.wp-post-image {
+        width: 100%;
+    }
+
+    .about__content {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        margin: 60px 0 100px 0;
+
+        .about__content--table {
+            margin-right: 60px;
+
+            .lwptoc_header {
+                display: none;
+            }
+
+            .lwptoc_i {
+                background-color: #fff;
+                padding: 0;
+            }
+
+            .lwptoc-light .lwptoc_items A:visited {
+                color: #999;
+            }
+        }
+
+        .about__content--text {
+            .text-block {
+                &:not(:last-child) {
+                    padding-bottom: 60px;
+                }
+
+                h2 {
+                    font-size: 42px;
+                    font-weight: 600;
+                    line-height: 48px;
+                    color: $default-color;
+                    padding-bottom: 20px;
+                }
+
+                p {
+                    font-size: 16px;
+                    color: $default-color;
+                    padding-bottom: 20px;
+                }
+
+                ul {
+                    padding-bottom: 20px;
+
+                    li {
+                        list-style-type: disc;
+                        padding-bottom: 5px;
+                    }
+                }
+
+                ol {
+                    padding-bottom: 20px;
+
+                    li {
+                        list-style-type: auto;
+                    }
+                }
+            }
+
+            .gratitude__image {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 40px 20px;
+
+                .gratitude__image--item {
+                    width: 263px;
+                    text-align: center;
+
+                    .image {
+                        width: 263px;
+                        height: 326px;
+                        border-radius: 20px;
+                        background: #F7F7F7;
+                        padding: 20px 30px;
+                    }
+
+                    .name {
+                        font-size: 16px;
+                        line-height: 16px;
+                        font-weight: 600;
+                        padding-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about{
+        .about__content{
+            flex-direction: column;
+
+            .about__content--table{
+                display: none;
+            }
+        }
+    }
+}
