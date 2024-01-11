@@ -191,7 +191,7 @@
 }
 
 .services {
-  padding: 45px 0 60px 0;
+  padding-top: 45px;
   background-color: #F7F7F7;
 
   .services__title {
@@ -237,6 +237,8 @@
   }
 
   .services__content {
+    padding-bottom: 60px;
+
     .services__item {
       //width: 533.333px;
       min-height: 505px;
@@ -320,7 +322,7 @@
   padding: 60px 0;
 
   .desk {
-    padding-top: 20px;
+    padding: 20px 0 40px 0;
     width: 611px;
   }
 
@@ -344,8 +346,7 @@
 }
 
 .reviews {
-  padding: 45px 0 60px 0;
-  //background-color: #F7F7F7;
+  padding-top: 45px;
 
   .reviews__title {
     position: relative;
@@ -353,6 +354,10 @@
     justify-content: space-between;
     padding-bottom: 27px;
     user-select: none;
+
+    .title {
+      padding-bottom: 0;
+    }
   }
 
   .swiper-button-next,
@@ -390,6 +395,8 @@
   }
 
   .reviews__content {
+    padding: 40px 0 60px 0;
+
     .reviews__item {
       //width: 533.333px;
       //min-height: 505px;
@@ -667,7 +674,7 @@
   }
 
   .services {
-    padding: 60px 0 40px 0;
+    padding-top: 60px;
 
     .services__title {
       padding-bottom: 0;
@@ -687,6 +694,8 @@
     }
 
     .services__content {
+      padding-bottom: 40px;
+
       .services__item {
         padding: 40px 24px;
         min-height: 423px;
@@ -912,10 +921,6 @@
 }
 
 @media screen and (max-width:480px) {
-  * {
-    //border: 1px solid red;
-  }
-
   .home__content {
     min-height: 812px;
 
@@ -949,12 +954,6 @@
 
   .projects {
     .projects__content {
-      .projects__content__item {
-        //height: 420px;
-
-        img.wp-post-image {}
-      }
-
       .scrollbar {
         margin-top: 40px;
       }
@@ -980,8 +979,6 @@
     .desk {
       width: 100%;
     }
-
-    .gallery__content {}
   }
 
   .reviews .reviews__content .reviews__item {

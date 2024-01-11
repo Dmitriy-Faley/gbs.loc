@@ -15,6 +15,26 @@
             }
         }
 
+        ul{
+            li{
+                list-style-type: initial;
+            }
+        }
+
+        ol{
+            li{
+                list-style-type: auto;
+            }
+        }
+
+        a{
+            color: $orange-color;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+
         img.wp-post-image {
             margin: 60px 0;
             width: 100%;
