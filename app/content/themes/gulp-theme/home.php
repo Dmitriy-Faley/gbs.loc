@@ -88,9 +88,13 @@ get_header();
       <?php endif; ?>
       
     </div>
-    <div class="scrollbar container">
-      <div class="swiper-scrollbar"></div>
-    </div>
+    
+      <div class="container">
+        <div class="scrollbar">
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </div>
+  
   </div>
 </section>
 

@@ -1,0 +1,36 @@
+.all-services{
+    ul {
+        list-style: none;
+        padding: 0;
+    
+        .inner {
+            overflow: hidden;
+            display: none;
+            padding: 0 40px 40px 40px;
+    
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+            color: #090230;
+            opacity: 0.9;
+            border: none;
+        }
+    
+        li {
+            background: #F7F7F7;
+            border: 1px solid rgba(109, 133, 255, 0.2);
+            border-radius: 20px;
+            margin-bottom: 20px;
+    
+            a.toggle {
+                font-size: 32px;
+                line-height: 32px;
+                width: 100%;
+                display: flex;
+                padding: 40px;
+                transition: all 0.3s ease;
+    
+            }
+        }
+    }
+}

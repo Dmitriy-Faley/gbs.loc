@@ -15,6 +15,7 @@
 @import "portfolio";
 @import "keys";
 @import "service";
+@import "all-serv";
 @import "about";
 
 
@@ -193,9 +194,7 @@ span::selection {
     max-width: 1680px;
     margin: 0 auto;
 
-    @media screen and (max-width: 1368px) {
-       
-    }
+    @media screen and (max-width: 1368px) {}
 
     @media screen and (max-width: $smDesktopWidth) {
         max-width: tableWidth;
@@ -268,12 +267,117 @@ span::selection {
         }
     }
 
-    .header__menu .header__right .header-menu__ul li a {
-        color: $orange-color;
+    .header__menu .header__right {
+        .header-menu__ul li a {
+            color: $orange-color;
+        }
+
+        .header__social {
+            a {
+                svg {
+                    circle {
+                        fill: $orange-color;
+                        stroke: $orange-color;
+                    }
+                }
+            }
+
+            a.facebook {
+                svg {
+                    path {
+                        &:first-child {
+                            fill: $white-color;
+                        }
+
+                        &:last-child {
+                            fill: $orange-color;
+                        }
+                    }
+                }
+            }
+
+            a.youtube {
+                svg {
+                    path {
+
+                        &:first-of-type {
+                            fill: $white-color;
+                        }
+
+                        &:last-child {
+                            fill: $orange-color;
+                        }
+                    }
+                }
+            }
+
+            a.tg,
+            a.phone {
+                svg {
+                    path {
+                        fill: $white-color;
+                    }
+                }
+            }
+        }
     }
 
     .menu-btn span {
         background-color: $orange-color;
+    }
+}
+
+.inner-page{
+    .header__menu .header__right {
+
+        .header__social {
+            a {
+                svg {
+                    circle {
+                        fill: $orange-color;
+                        stroke: $orange-color;
+                    }
+                }
+            }
+
+            a.facebook {
+                svg {
+                    path {
+                        &:first-child {
+                            fill: $white-color;
+                        }
+
+                        &:last-child {
+                            fill: $orange-color;
+                        }
+                    }
+                }
+            }
+
+            a.youtube {
+                svg {
+                    path {
+
+                        &:first-of-type {
+                            fill: $white-color;
+                        }
+
+                        &:last-child {
+                            fill: $orange-color;
+                        }
+                    }
+                }
+            }
+
+            a.tg,
+            a.phone {
+                svg {
+                    path {
+                        fill: $white-color;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -292,7 +396,7 @@ span::selection {
         color: #999;
         transition: all 0.2s ease;
 
-        &:hover{
+        &:hover {
             color: $default-color;
         }
     }
@@ -305,7 +409,7 @@ span::selection {
         margin: 0 12px;
     }
 
-    .breadcrumbs__current{
+    .breadcrumbs__current {
         color: $default-color;
     }
 }

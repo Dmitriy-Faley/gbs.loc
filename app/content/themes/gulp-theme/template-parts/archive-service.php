@@ -7,15 +7,12 @@ get_header();
 
 <?php if ( function_exists( 'dimox_breadcrumbs' ) ) dimox_breadcrumbs(); ?>
 
-<section class="services">
+<section class="all-services">
   <div class="container">
-    <div class="services__title">
-      <h3 class="title">Наши услуги</h3>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
-    <div class="swiper services__content services__slider">
-        <?php
+    <div class="all-services__content">
+      <ul class="accordion">
+
+      <?php
           // запрос
           $wpb_all_query = get_pages( [
             'sort_order'   => 'ASC',
@@ -28,39 +25,46 @@ get_header();
             'exclude_tree' => '',
             'number'       => '',
             'offset'       => 0,
+            'parent'       => 172,
             'post_type'    => 'page',
             'posts_per_page'  => -1,
             'post_status'  => 'publish',
           ] ); ?>
-      <div class="swiper-wrapper">
-        <?php foreach( $wpb_all_query as $post ){ ?>
-          <div class="swiper-slide">
-            <div class="services__item">
-              <p class="title"><?php the_title(); ?></p>
-              <div class="text">
-                <?php 
+
+      <?php foreach( $wpb_all_query as $post ){ ?>
+
+        <li>
+          <a class="toggle" href="javascript:void(0);">
+            <?php the_title(); ?>
+            <div class="text">
+              <?php 
                   if (get_field('opisanie_na_glavnoj')) {
-                    the_field('opisanie_na_glavnoj'); ?>...
-                  <?php }
-                ?>
-              </div>
-              <a href="<?php echo the_permalink() ; ?>" class="button-more">Узнать больше
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/btn-more.svg" alt="btn-more">
-              </a>
+                      the_field('opisanie_na_glavnoj'); ?>
+              <?php } ?>
             </div>
+          </a>
+          <div class="inner">
+            <?php the_content(); ?>
+
+            <?php 
+                if (has_post_thumbnail()) {
+                    the_post_thumbnail();
+                }
+            ?>
           </div>
-          <?php } ?>
-          <?php wp_reset_postdata(); ?>
-      </div>
-      <div class="scrollbar">
-        <div class="swiper-scrollbar"></div>
-      </div>
+        </li>
+
+        <?php } ?>
+      <?php wp_reset_postdata(); ?>
+
+      </ul>
     </div>
   </div>
 </section>
 
 
+
+
 <?php theme_sidebar( 'form' ); ?>
 
 <?php get_footer(); ?>
-

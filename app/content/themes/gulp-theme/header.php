@@ -175,7 +175,7 @@
 
 
 
-	<header class="header <?php if (is_home() || is_front_page() ) { echo 'header-home'; } ?>" id="header">
+	<header class="header <?php if (is_home() || is_front_page() ) { echo 'header-home'; } else{ echo 'inner-page';} ?>" id="header">
 		<div class="container">
 			<div class="header__menu">
 				<a href="/" class="header__logo">

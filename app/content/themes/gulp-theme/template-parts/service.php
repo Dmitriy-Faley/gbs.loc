@@ -50,6 +50,7 @@ get_header();
             'number'       => '',
             'offset'       => 0,
             'post_type'    => 'page',
+            'parent'       => 172,
             'posts_per_page'  => 10,
             'post_status'  => 'publish',
           ] ); ?>
