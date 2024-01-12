@@ -9,6 +9,7 @@ get_header();
 
 <section class="all-services">
   <div class="container">
+    <h1 class="title">Наши сервисы</h1>
     <div class="all-services__content">
       <ul class="accordion">
 
@@ -35,7 +36,7 @@ get_header();
 
         <li>
           <a class="toggle" href="javascript:void(0);">
-            <?php the_title(); ?>
+            <p class="title"><?php the_title(); ?></p>
             <div class="text">
               <?php 
                   if (get_field('opisanie_na_glavnoj')) {
@@ -44,13 +45,18 @@ get_header();
             </div>
           </a>
           <div class="inner">
-            <?php the_content(); ?>
-
-            <?php 
-                if (has_post_thumbnail()) {
-                    the_post_thumbnail();
-                }
-            ?>
+            <div class="inner__content">
+              <a href="<?php the_permalink(); ?>" class="button">Подробнее</a>
+              <div class="text">
+                <?php the_content(); ?>
+    
+                <?php 
+                    if (has_post_thumbnail()) {
+                        the_post_thumbnail();
+                    }
+                ?>
+              </div>
+            </div>
           </div>
         </li>
 
