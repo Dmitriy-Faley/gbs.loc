@@ -67,9 +67,6 @@ get_header();
                     <?php }
                     ?>
                 </div>
-                <a href="<?php echo the_permalink() ; ?>" class="button-more">Узнать больше
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/btn-more.svg" alt="btn-more">
-                </a>
                 </div>
             </div>
             <?php } ?>

@@ -55,8 +55,13 @@
     .services__dop {
         .services__item {
             border: 1px solid #D9D9D9;
-            min-height: 404px;
+            height: 404px;
+            min-height: auto;
             padding: 60px 40px;
+
+            &:hover{
+                box-shadow: none;
+            }
         }
     }
 }

@@ -78,6 +78,7 @@
       .swiper-scrollbar {
         height: 2px;
         position: relative;
+        width: 100%;
       }
     }
 
@@ -230,6 +231,7 @@
     .swiper-scrollbar {
       display: none;
       position: relative;
+      width: 100%;
 
       .swiper-scrollbar-drag {
         background: $orange-color;
@@ -341,6 +343,7 @@
 
       .swiper-scrollbar{
         position: relative;
+        width: 100%;
       }
     }
 
@@ -411,10 +414,6 @@
       display: flex;
       flex-direction: column;
       transition: all .2s ease;
-
-      &:hover {
-        box-shadow: 4px 4px 14.3px 0px rgba(50, 50, 50, 0.10);
-      }
 
       .reviews__logo {
         width: 142px;
