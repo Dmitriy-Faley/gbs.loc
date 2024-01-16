@@ -63,7 +63,7 @@ get_header();
             <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
           
           <?php } else{ ?>
-            <img class="project__image" src="<?php echo get_template_directory_uri() ?>/assets/img/projects/no-image.png"
+            <img class="project__image" src="<?php echo get_template_directory_uri() ?>/assets/img/project_card.png"
             alt="portfolio">
           <?php } ?>
 

@@ -110,7 +110,10 @@
                 transition: all 0.3s ease;
 
                 &::before {
-                    content: "+";
+                    content: "";
+                    background: $orange-color url('/content/themes/gulp-theme/assets/img/icons/plus.svg');
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
                     font-weight: 400;
                     font-size: 40px;
                     vertical-align: bottom;
@@ -124,18 +127,23 @@
                     transform: rotate(0deg);
                     transition: transform .2s;
                     color: $white-color;
-                    background: $orange-color;
+                    //background: $orange-color;
                 }
 
                 &:hover {
                     &::before {
-                        background: #F66D4D;
+                        background: #F66D4D url('/content/themes/gulp-theme/assets/img/icons/plus.svg');
+                        background-repeat: no-repeat;
+                        background-position: 50% 50%;
                     }
                 }
             }
 
             a.toggle.active::before {
-                content: '-';
+                content: '';
+                background: $orange-color url('/content/themes/gulp-theme/assets/img/icons/minus.svg');
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
                 transform: rotate(-180deg);
             }
         }
