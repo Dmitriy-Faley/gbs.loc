@@ -21,11 +21,13 @@ get_header();
         <div class="about__content">
             <div class="about__content--table">
                 <?php //echo do_shortcode('[lwptoc]') ?>
-                <a href="#two" class="link">Различия клиентов</a>
-                <a href="#three" class="link">Основные правила</a>
-                <a href="#blagodarnosti" class="link">Благодарности</a>
-                <a href="#clients" class="link">Клиенты</a>
-                <a href="#history" class="link">История</a>
+                <div class="table__list">
+                    <a href="#two" class="link">Различия клиентов</a>
+                    <a href="#three" class="link">Основные правила</a>
+                    <a href="#blagodarnosti" class="link">Благодарности</a>
+                    <a href="#clients" class="link">Клиенты</a>
+                    <a href="#history" class="link">История</a>
+                </div>
             </div>
             <div class="about__content--text">
                 <svg class="logo" xmlns="http://www.w3.org/2000/svg" width="191" height="155" viewBox="0 0 191 155" fill="none">

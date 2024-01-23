@@ -107,6 +107,12 @@
         object-fit: contain;
       }
 
+      .project__image {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
+
       .item__content {
         padding: 0 40px 40px 40px;
         position: absolute;
@@ -114,6 +120,13 @@
         z-index: 2;
         display: flex;
         align-items: flex-start;
+
+        >div{
+          height: 150px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
 
         .project__title {
           font-size: 32px;
@@ -233,6 +246,7 @@
       display: none;
       position: relative;
       width: 100%;
+      height: 2px;
 
       .swiper-scrollbar-drag {
         background: $orange-color;
@@ -349,6 +363,7 @@
         position: relative;
         left: 0;
         width: 100%;
+        height: 2px;
       }
     }
 
@@ -399,6 +414,9 @@
   .scrollbar {
     .swiper-scrollbar {
       display: none;
+      position: relative;
+      width: 100%;
+      height: 2px;
 
       .swiper-scrollbar-drag {
         background: $orange-color;
@@ -767,6 +785,11 @@
         .swiper-scrollbar {
           height: 1px;
         }
+      }
+
+      .gallery__content__item {
+        width: 461px;
+        height: 330px;
       }
     }
   }
