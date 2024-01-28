@@ -12,8 +12,13 @@
   z-index: 10;
 
   .header__logo {
-    transition: all 1s ease-in-out;
+    //transition: all 1s ease-in-out;
+    display: inline-block;
+    overflow: hidden;
+
     svg {
+      display: block;
+      transition: 1s;
       width: 100%;
       height: 100%;
     }
@@ -23,7 +28,7 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 
     .header__right {
       display: flex;
@@ -165,10 +170,10 @@
     position: relative;
     z-index: 999;
 
-    .mobile__logo{
+    .mobile__logo {
       width: 98px;
 
-      svg{
+      svg {
         width: 100%;
         height: 100%;
       }
@@ -197,7 +202,7 @@
           }
 
           &:hover {
-            a{
+            a {
               color: $orange-color;
               text-decoration: underline;
             }

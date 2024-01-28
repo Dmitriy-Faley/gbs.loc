@@ -202,35 +202,6 @@ get_header();
 </section>
 
 
-<?php if( have_rows('sotrudniki', 60) ): ?>
-<!-- <section class="team">
-  <div class="container">
-    <h3 class="title">Наша команда сотрудников</h3>
-    <p class="subtitle">Наш коллектив – пчелиный улей, в котором постоянно что-то происходит. Некоторые сотрудники
-      помнят, как выглядели первые сайты Рунета. За плечами – обширная практика, что позволило сформировать собственный
-      подход к воплощению проектов в жизнь.</p>
-    <div class="team__content">
-
-      <?php while( have_rows('sotrudniki', 60) ): the_row(); 
-        // переменные
-        $imageSotrudnika = get_sub_field('kartinka_sotrudnika');
-        $fioSotrudnika = get_sub_field('fio_sotrudnika');
-        $dolznostSotrudnika = get_sub_field('dolzhnost_sotrudnika');
-    ?>
-      <div class="team__item">
-        <img src="<?php echo $imageSotrudnika['url']; ?>" alt="<?php echo $imageSotrudnika['alt'] ?>" />
-        <p class="name"><?php echo $fioSotrudnika; ?></p>
-        <p class="job"><?php echo $dolznostSotrudnika; ?></p>
-      </div>
-
-      <?php endwhile; ?>
-
-    </div>
-    <a href="#ex1" rel="modal:open" class="button">Узнать больше</a>
-  </div>
-</section> -->
-<?php endif; ?>
-
 
 <?php if( have_rows('fotogalereya') ): ?>
 <section class="gallery">

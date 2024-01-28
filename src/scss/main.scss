@@ -253,7 +253,7 @@ span::selection {
     padding-bottom: 1.25rem;
 
     .header__menu {
-        align-items: center;
+        //align-items: center;
     }
 
     .header__logo {
@@ -261,6 +261,8 @@ span::selection {
         height: 68px;
 
         svg {
+            transform: scale(0.9);
+
             path {
                 fill: $orange-color;
             }
@@ -280,6 +282,14 @@ span::selection {
                         stroke: $orange-color;
                     }
                 }
+
+                &:hover {
+                    svg {
+                        circle {
+                            fill: $white-color;
+                        }
+                    }
+                }
             }
 
             a.facebook {
@@ -291,6 +301,20 @@ span::selection {
 
                         &:last-child {
                             fill: $orange-color;
+                        }
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            &:first-child {
+                                fill: $orange-color;
+                            }
+
+                            &:last-child {
+                                fill: $white-color;
+                            }
                         }
                     }
                 }
@@ -309,6 +333,21 @@ span::selection {
                         }
                     }
                 }
+
+                &:hover {
+                    svg {
+                        path {
+
+                            &:first-of-type {
+                                fill: $orange-color;
+                            }
+
+                            &:last-child {
+                                fill: $white-color;
+                            }
+                        }
+                    }
+                }
             }
 
             a.tg,
@@ -316,6 +355,14 @@ span::selection {
                 svg {
                     path {
                         fill: $white-color;
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            fill: $orange-color;
+                        }
                     }
                 }
             }
@@ -327,7 +374,7 @@ span::selection {
     }
 }
 
-.inner-page{
+.inner-page {
     .header__menu .header__right {
 
         .header__social {
@@ -336,6 +383,14 @@ span::selection {
                     circle {
                         fill: $orange-color;
                         stroke: $orange-color;
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        circle {
+                            fill: $white-color;
+                        }
                     }
                 }
             }
@@ -349,6 +404,20 @@ span::selection {
 
                         &:last-child {
                             fill: $orange-color;
+                        }
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            &:first-child {
+                                fill: $orange-color;
+                            }
+
+                            &:last-child {
+                                fill: $white-color;
+                            }
                         }
                     }
                 }
@@ -367,6 +436,21 @@ span::selection {
                         }
                     }
                 }
+
+                &:hover {
+                    svg {
+                        path {
+
+                            &:first-of-type {
+                                fill: $orange-color;
+                            }
+
+                            &:last-child {
+                                fill: $white-color;
+                            }
+                        }
+                    }
+                }
             }
 
             a.tg,
@@ -374,6 +458,14 @@ span::selection {
                 svg {
                     path {
                         fill: $white-color;
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            fill: $orange-color;
+                        }
                     }
                 }
             }
@@ -417,20 +509,15 @@ span::selection {
 /*Modal Style*/
 .blocker {
     z-index: 99 !important;
-    //background-color: transparent !important;
+    backdrop-filter: blur(7.5px);
+    background-color: #b6b4b4ad !important;
 }
 
 #ex1,
 #response {
     background: #fff;
-    border-radius: 40px;
+    border-radius: 20px;
     box-shadow: none;
-}
-
-#response {
-    .modal-content .form .form__button {
-        //padding-top: 3.125rem;
-    }
 }
 
 
@@ -449,139 +536,22 @@ span::selection {
 
     .modal-content {
         display: flex;
-        justify-content: space-between;
-        position: relative;
-        padding: 107px 80px 104px 80px;
-        width: 1400px;
+        justify-content: center;
+        align-items: center;
+        padding: 100px 20px;
+        width: 830px;
 
-        .form {
-            display: flex;
-            flex-direction: column;
-            width: 680px;
-
-            input[type="text"] {
-                margin-bottom: 3.125rem;
-            }
-
-
-            input[type="text"],
-            input[type="tel"],
-            input[type="email"] {
-                font-family: 'Inter', sans-serif;
-                font-weight: 500;
-                width: 100%;
-                background: #F1F4F4;
-                border-radius: 50px;
-                border: 1px solid #fff;
-                padding: 18px 24px 20px 24px;
-
-                &::placeholder {
-                    font-family: 'Inter', sans-serif;
-                    color: #0E0F11;
-                    font-size: 16px;
-                    line-height: 15px;
-                }
-
-                &:focus {
-                    &::placeholder {
-                        color: transparent;
-                    }
-                }
-            }
-
-            .input__wrapper {
-                width: 100%;
-                position: relative;
-                padding-top: 50px;
-
-                .input__label {
-                    color: #fff;
-                    padding-bottom: 13px;
-                }
-
-                .file_pretext {
-                    display: flex;
-                    align-items: center;
-                    cursor: pointer;
-                    color: #DC7148;
-                    font-weight: 500;
-                    transition: all 0.2s ease;
-
-                    &::before {
-                        content: '';
-                        display: inline-block;
-                        background: url('/content/themes/gulp-theme/assets/img/icons/file.svg') center no-repeat;
-                        background-size: contain;
-                        width: 11px;
-                        height: 22px;
-                        margin-right: 8px;
-                    }
-
-                    &:hover {
-                        color: #0e0f11;
-                    }
-                }
-
-                input[type=file] {
-                    outline: 0;
-                    opacity: 0;
-                    pointer-events: none;
-                    user-select: none;
-                    position: absolute;
-                    width: 100%;
-                    left: 0;
-                    height: 65px;
-                }
-            }
-
-            .form__button {
-                padding-top: 3.75rem;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-
-                .button {
-                    background: #0E0F11;
-                    color: #fff;
-
-                    &:hover {
-                        color: #0E0F11;
-                        background: #FDD0BF;
-                    }
-                }
-
-                p {
-                    width: 419px;
-
-                    a {
-                        color: #DC7148;
-                        text-decoration: underline;
-                        transition: all 0.2s ease;
-
-                        &:hover {
-                            color: #0E0F11;
-                        }
-                    }
-                }
-            }
+        .title {
+            color: $orange-color;
+            text-align: center;
+            padding-bottom: 0;
+            leading-trim: both;
+            text-edge: cap;
         }
 
-        .modal__icons {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-
-            .icon {
-                &:first-child {
-                    position: absolute;
-                    right: 23%;
-                    top: 25%;
-                }
-
-                &:nth-child(3) {
-                    margin-right: 154px;
-                }
-            }
+        .button{
+            width: max-content;
+            margin: 60px auto 0;
         }
     }
 }
@@ -675,81 +645,7 @@ span::selection {
 
 /* 961 - 1368 px */
 @media screen and (max-width: 1368px) {
-    .modal {
-        .modal-content {
-            max-width: 996px;
-            padding: 72px 57px;
 
-            .form {
-                width: 505px;
-
-                input[type="text"] {
-                    margin-bottom: 2.5rem;
-                }
-
-                input[type="text"],
-                input[type="tel"],
-                input[type="email"] {
-                    padding: 11px 17px;
-                    width: 484px;
-
-                    &::placeholder {
-                        font-size: 14px;
-                    }
-                }
-
-                .form__button {
-                    padding-top: 2.5rem;
-
-                    p {
-                        font-size: 12px;
-                        line-height: 17px;
-                        width: 309px;
-                    }
-                }
-            }
-
-            .modal__icons {
-                .icon {
-                    &:first-child {
-                        width: 38.42px;
-                        height: 38.42px;
-                    }
-
-                    &:nth-child(2) {
-                        width: 124.51px;
-                        height: 124.51px;
-                    }
-
-                    &:last-child {
-                        width: 142.29px;
-                        height: 142.29px;
-                        margin-right: 125px;
-                    }
-                }
-            }
-        }
-    }
-
-    .modal-vacancie {
-        .title {
-            padding-bottom: 20px !important;
-        }
-    }
-
-    .wheel {
-        width: 54.3px;
-        height: 54.3px;
-
-        img {
-            width: 27.93px;
-        }
-
-        .wheel__letter {
-            font-size: 8.36px;
-            padding-bottom: 28px;
-        }
-    }
 }
 
 /* 769 - 960 px */
@@ -774,50 +670,17 @@ span::selection {
     .modal {
         .modal-content {
             max-width: fit-content;
-            padding: 70px 40px;
-            width: 100%;
+            width: 458px;
+            padding: 80px 24px;
 
-            .form {
-                width: 100%;
-
-                .title {
-                    width: auto;
-                    padding-bottom: 60px;
-                }
-
-                input[type="text"] {
-                    margin-bottom: 3.125rem;
-                }
-
-                input[type="text"],
-                input[type="tel"],
-                input[type="email"] {
-                    padding: 18px 24px 20px 24px;
-                    width: 100%;
-
-                    &::placeholder {
-                        font-size: 1rem;
-                        line-height: 22px;
-                    }
-                }
-
-                .form__button {
-                    padding-top: 3.75rem;
-                    justify-content: space-between;
-                    width: 100%;
-
-                    p {
-                        font-size: 1rem;
-                        line-height: 22px;
-                        width: 409px;
-                        width: calc(100px + (409 - 100) * ((100vw - 480px) / (768 - 480)));
-                        margin-left: 27px;
-                    }
-                }
+            .title{
+                font-size: 24px;
+                line-height: 24px;
             }
 
-            .modal__icons {
-                display: none;
+            .button{
+                margin: 40px auto 0;
+                width: 100%;
             }
         }
     }
@@ -826,88 +689,6 @@ span::selection {
 
 /* 320 - 480 px */
 @media screen and (max-width: 480px) {
-
-    #ex1 {
-        border-radius: 20px;
-    }
-
-    .modal {
-        .modal-content {
-            padding: 44px 15px;
-
-            .form {
-                .title {
-                    text-align: center;
-                    padding-bottom: 30px;
-                }
-
-                input[type="text"] {
-                    margin-bottom: 1.875rem;
-                }
-
-                input[type="text"],
-                input[type="tel"],
-                input[type="email"] {
-                    padding: 17px 20px 18px 20px;
-                    font-size: 14px;
-                    line-height: 20px;
-
-                    &::placeholder {
-                        font-size: 14px;
-                        line-height: 20px;
-                    }
-                }
-
-                .input__wrapper {
-                    padding-top: 31px;
-
-                    .input__label {
-                        color: #fff;
-                        padding-bottom: 13px;
-                    }
-
-                    .file_pretext {
-                        font-size: 14px;
-                        line-height: 20px;
-
-                        &::before {
-                            width: 8px;
-                            height: 18px;
-                            margin-right: 10px;
-                        }
-                    }
-                }
-
-                .form__button {
-                    padding-top: 1.875rem;
-                    flex-direction: column-reverse;
-
-                    p {
-                        font-size: 12px;
-                        line-height: 17px;
-                        width: 100%;
-                        margin-left: 0;
-                        padding-bottom: 20px;
-                    }
-                }
-            }
-        }
-
-        a.close-modal {
-            top: 14px !important;
-            right: 14px !important;
-            width: 14.57px !important;
-            height: 14.38px !important;
-        }
-    }
-
-    .modal-vacancie {
-        border-radius: 20px !important;
-
-        .title {
-            padding-bottom: 8px !important;
-        }
-    }
 }
 
 

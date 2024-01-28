@@ -605,3 +605,23 @@ add_filter('wp_list_categories', 'add_rel_nofollow_to_wp_list_categories');
 function add_rel_nofollow_to_wp_list_categories($a) {
 	return str_replace('<a ', '<a rel="nofollow" ', $a);
 }
+
+add_action( 'wp_footer', 'contact_form_sent' );
+
+function contact_form_sent() {
+	?>
+		<script type="text/javascript">
+		document.addEventListener( 'wpcf7mailsent', function( event ) {
+			if ( '18' == event.detail.contactFormId || '141' == event.detail.contactFormId ) {
+				const buttonModal = document.getElementById('buttonModal');
+				setTimeout(function () {
+					console.log("modalll");
+					buttonModal.click();
+				}, 1000);
+			} 
+		}, false );
+		</script>
+	<?php
+}
+
+

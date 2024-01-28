@@ -65,10 +65,6 @@
                     }
                 }
 
-                select{
-                    appearance: auto;
-                }
-
                 textarea {
                     height: 120px;
                     padding: 18px 26px;
@@ -104,6 +100,21 @@
                     width: 100%;
                     left: 0;
                     height: 65px;
+                }
+            }
+
+            .form__item.select {
+                position: relative;
+
+                &::after {
+                    content: '';
+                    background: url(/content/themes/gulp-theme/assets/img/icons/arrow-select.svg) center no-repeat;
+                    width: 6px;
+                    height: 3px;
+                    position: absolute;
+                    right: 24px;
+                    top: 70%;
+
                 }
             }
 
@@ -163,7 +174,7 @@
 
 
 @media screen and (max-width: 480px) {
-    .contacts .contacts__content .form .button{
+    .contacts .contacts__content .form .button {
         width: 100%;
     }
 }
