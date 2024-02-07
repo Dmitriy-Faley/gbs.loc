@@ -146,6 +146,12 @@
                     }
                 }
             }
+
+            .inner.show{
+                .text{
+                    width: auto;
+                }
+            }
         }
     }
 }

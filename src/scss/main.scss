@@ -528,10 +528,10 @@ span::selection {
 
     a.close-modal {
         background-image: url('/content/themes/gulp-theme/assets/img/icons/close-modal.svg') !important;
-        top: 40px !important;
-        right: 40px !important;
-        width: 25px !important;
-        height: 25px !important;
+        top: 0px !important;
+        right: -100px !important;
+        width: 64px !important;
+        height: 64px !important;
     }
 
     .modal-content {

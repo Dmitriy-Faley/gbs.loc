@@ -26,6 +26,7 @@
       font-size: 96px;
       line-height: 86.4px;
       width: 830px;
+      padding-bottom: 40px;
     }
 
     .subtitle {
@@ -527,6 +528,12 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+
+    .balls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
   }
 
   .rew {
