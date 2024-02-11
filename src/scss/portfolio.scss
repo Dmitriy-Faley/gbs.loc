@@ -55,12 +55,33 @@
                 object-fit: cover;
             }
 
-            .item__name {
-                display: block;
-                font-size: 32px;
-                line-height: 39px;
+            .portfolio__link {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
                 padding: 40px 0;
-                width: 460px;
+
+                .item__name {
+                    display: block;
+                    font-size: 32px;
+                    line-height: 39px;
+                    width: 460px;
+                }
+
+                img.arrow-more {
+                    opacity: 0;
+                    transition: all 0.2s ease;
+                }
+
+                &:hover {
+                    .item__name {
+                        color: $orange-color;
+                    }
+
+                    img.arrow-more {
+                        opacity: 1;
+                    }
+                }
             }
 
             .item__tegs {
@@ -105,11 +126,14 @@
             .portfolio__content__item {
                 width: 100%;
 
-                .item__name {
-                    width: auto;
-                    font-size: 24px;
-                    line-height: 28px;
+                .portfolio__link {
                     padding: 20px 0;
+
+                    .item__name {
+                        width: auto;
+                        font-size: 24px;
+                        line-height: 28px;
+                    }
                 }
 
                 .item__tegs {
@@ -133,6 +157,12 @@
         .portfolio__content {
 
             .portfolio__content__item {
+                .portfolio__link {
+                    img.arrow-more {
+                        width: 50px;
+                    }
+                }
+
                 .item__tegs {
                     gap: 10px;
                 }

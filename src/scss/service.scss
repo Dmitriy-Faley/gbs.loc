@@ -15,22 +15,22 @@
             }
         }
 
-        ul{
-            li{
+        ul {
+            li {
                 list-style-type: initial;
             }
         }
 
-        ol{
-            li{
+        ol {
+            li {
                 list-style-type: auto;
             }
         }
 
-        a{
+        a {
             color: $orange-color;
 
-            &:hover{
+            &:hover {
                 text-decoration: underline;
             }
         }
@@ -59,11 +59,11 @@
             min-height: auto;
             padding: 60px 40px;
 
-            &:hover{
+            &:hover {
                 box-shadow: none;
             }
 
-            .title{
+            .title {
                 padding-bottom: 20px;
             }
         }
@@ -156,19 +156,19 @@
 
 
 @media screen and (max-width: 768px) {
-    .service{
-        .service__content{
+    .service {
+        .service__content {
             width: 100%;
             padding-bottom: 60px;
         }
     }
 
-    .services__inner{
+    .services__inner {
         width: 100%;
         padding-bottom: 60px;
     }
 
-    .distribution{
+    .distribution {
         width: 100%;
         padding-bottom: 60px;
     }
@@ -176,40 +176,60 @@
 
 
 @media screen and (max-width: 480px) {
-    .service{
-        .title{
+    .service {
+        .title {
             padding-bottom: 20px;
         }
-        .service__content{
-            p{
+
+        .service__content {
+            p {
                 font-size: 14px;
                 line-height: 19.6px;
             }
         }
     }
 
-    .services__inner{
-        .services__dop{
-            .services__item{
+    .services__inner {
+        .services__dop {
+            .services__item {
                 padding: 40px 24px;
 
-                .title{
+                .title {
                     padding-bottom: 20px;
                 }
             }
         }
     }
 
-    .distribution{
-        ul{
-            .inner{
+    .distribution {
+        ul {
+            .inner {
                 padding: 0 24px 40px 24px;
+                font-size: 14px;
             }
-            li{
-                a.toggle{
+
+            li {
+                a.toggle {
                     padding: 40px 24px 20px 24px;
                     font-size: 24px;
                     line-height: 24px;
+
+                    &::before {
+                        width: 24px;
+                        height: 24px;
+                        background-size: 16px;
+                    }
+
+                    &:hover{
+                        &::before{
+                            background-size: 16px;
+                        }
+                    }
+                    
+                }
+
+                a.toggle.active::before {
+                    background-size: 16px;
                 }
             }
         }

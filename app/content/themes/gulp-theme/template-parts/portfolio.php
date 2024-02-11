@@ -52,7 +52,10 @@ get_header();
                         alt="portfolio">
                     <?php }
                     ?>
-                    <a href="<?php the_permalink(); ?>" class="item__name"><?php the_title(); ?></a>
+                    <div class="portfolio__link">
+                        <a href="<?php the_permalink(); ?>" class="item__name"><?php the_title(); ?></a>
+                        <img class="arrow-more" src="<?php echo get_template_directory_uri() ?>/assets/img/icons/arrow-project.svg" alt="arrow-project">
+                    </div>
                     <div class="item__tegs">
                         <?php $post_categories = get_the_terms(get_the_ID(), "keyscat");
                             foreach ($post_categories as $post_category) {

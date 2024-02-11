@@ -60,7 +60,7 @@ get_header();
 
           if( !empty($image) ){ ?>
 
-            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+            <img class="project__image" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
           
           <?php } else{ ?>
             <img class="project__image" src="<?php echo get_template_directory_uri() ?>/assets/img/project_card.png"
@@ -115,8 +115,8 @@ get_header();
   <div class="container">
     <div class="services__title">
       <h3 class="title">Наши услуги</h3>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next services-next"></div>
+      <div class="swiper-button-prev services-prev"></div>
     </div>
     <div class="swiper services__content services__slider">
         <?php
@@ -235,8 +235,8 @@ get_header();
   <div class="container">
     <div class="reviews__title">
       <h3 class="title">Отзывы о нас</h3>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next reviews-next"></div>
+      <div class="swiper-button-prev reviews-prev"></div>
     </div>
     <div class="swiper reviews__content">
       <div class="swiper-wrapper">

@@ -181,8 +181,8 @@
     },
 
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".services-next",
+      prevEl: ".services-prev",
     },
 
   });
@@ -215,8 +215,8 @@
     },
 
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".reviews-next",
+      prevEl: ".reviews-prev",
     },
 
   });

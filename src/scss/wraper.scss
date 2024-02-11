@@ -531,7 +531,7 @@
 
     .balls {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 10px;
     }
   }
@@ -701,8 +701,37 @@
     }
 
     .projects__content {
+
+      .swiper-wrapper {
+        padding-bottom: 5rem;
+      }
+
       .projects__content__item {
-        height: 480px;
+        height: 420px;
+        //width: 296px;
+
+        img {
+          height: 100%;
+        }
+
+        .item__content {
+          padding: 0;
+          bottom: -25%;
+
+          .project__title {
+            font-size: 24px;
+            line-height: 24px;
+            padding-bottom: 12px;
+          }
+
+          .project__desk {
+            font-size: 16px;
+          }
+
+          img.arrow-more {
+            width: 50px;
+          }
+        }
       }
     }
   }
@@ -1025,12 +1054,14 @@
 
   .projects {
     .projects__content {
+      width: 93%;
+
       .scrollbar {
         margin-top: 40px;
       }
 
       .swiper-wrapper {
-        margin-left: 10px;
+        padding-bottom: 6rem;
       }
 
       .projects__content__item {
@@ -1053,7 +1084,7 @@
     }
 
     .button {
-      width: 90%;
+      width: 95%;
       left: 0;
       right: 0;
       margin: 0 auto;

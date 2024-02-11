@@ -115,7 +115,7 @@ get_header();
                             <a class="image" data-fancybox="gallery" href="<?php echo $imgGrat['url']; ?>">
                                 <img src="<?php echo $imgGrat['url']; ?>" alt="<?php echo $imgGrat['alt']; ?>">
                             </a>
-                            <a href="<?php echo $imgGrat['url']; ?>" class="name"><?php echo $titleGrat; ?></a>
+                            <a href="<?php echo $imgGrat['url']; ?>" data-fancybox="gallery" class="name"><?php echo $titleGrat; ?></a>
                         </div>
 
                         <?php endwhile; ?>

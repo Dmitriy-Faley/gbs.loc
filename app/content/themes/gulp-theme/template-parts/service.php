@@ -148,13 +148,16 @@ get_header();
 
       <div class="swiper-slide">
         <a href="<?php the_permalink(); ?>" class="projects__content__item">
-        
+
         <?php 
           $image = get_field('img_home');
+
           if( !empty($image) ){ ?>
-            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+            <img class="project__image" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+          
           <?php } else{ ?>
-            <img class="project__image" src="<?php echo get_template_directory_uri() ?>/assets/img/projects/no-image.png"
+            <img class="project__image" src="<?php echo get_template_directory_uri() ?>/assets/img/project_card.png"
             alt="portfolio">
           <?php } ?>
 
@@ -179,9 +182,13 @@ get_header();
       <?php endif; ?>
       
     </div>
-    <div class="scrollbar container">
-      <div class="swiper-scrollbar"></div>
-    </div>
+    
+      <div class="container">
+        <div class="scrollbar">
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </div>
+  
   </div>
 </section>
 

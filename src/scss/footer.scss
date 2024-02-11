@@ -21,10 +21,16 @@
 
         ul {
           li {
+            transition: all 0.2s ease;
+
             a {
               font-size: 32px;
               font-weight: 500;
               color: $white-color;
+            }
+
+            &:hover {
+              text-decoration: underline;
             }
 
             &:not(:last-child) {
@@ -112,8 +118,8 @@
 
 @media screen and (max-width:480px) {
 
-  .footer{
-    .footer__bottom{
+  .footer {
+    .footer__bottom {
       width: 100%;
     }
   }
