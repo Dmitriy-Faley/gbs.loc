@@ -12,9 +12,24 @@ Version: 1.0
 }
 
 .wpcf7-not-valid-tip {
+	display: flex;
+	align-items: flex-end;
+	gap: 8px;
 	position: absolute;
 	bottom: -25px;
-	font-weight: 500;
+	color: #F5222D;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 12px;
+}
+
+.wpcf7-not-valid-tip::before {
+	content: '';
+	background: url(/content/themes/gulp-theme/assets/img/icons/warning.svg) center no-repeat;
+	display: inline-block;
+	width: 17px;
+	height: 17px;
 }
 
 .wpcf7 form.invalid input.wpcf7-not-valid {

@@ -5,6 +5,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?php echo wp_get_document_title(); ?></title>
+	<link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/assets/img/favicon.svg" type="image/png">
 	<?php wp_head(); ?>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">

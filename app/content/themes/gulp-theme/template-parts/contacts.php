@@ -87,6 +87,7 @@ get_header();
         $('input[name="file-422"]').change(function (e) {
             var fileName = e.target.files[0].name;
             $('.file_pretext').text(fileName);
+            $('.file_pretext').addClass('add-file');
         });
     });
 </script>
